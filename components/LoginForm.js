@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import axios from 'axios';
 import jwt_decode from "jwt-decode";
+import { useRouter } from 'next/router';
 
 import { loginEndPoint } from '../config/endpoints';
 
 function LoginForm() {
+  const router = useRouter();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   // error messages 
@@ -18,14 +21,18 @@ function LoginForm() {
           email,
           password,
       });
-      console.log(response)
-      console.log(response.data)// represents token
+      // console.log(response.data)// represents token
       var {token} = response.data
+      localStorage.setItem('auth-token', token);
       // decoding JWTs token
       var decoded = jwt_decode(token);
-      console.log(decoded)
+      // console.log(decoded)
       //if registration is successful
       setError('');
+      // Navigate to profile page if the user is not admin
+      if(!decoded.isAdmin){
+        router.push('/profile')
+      }
     } catch (error) {
         if(error){
             console.log(error);
