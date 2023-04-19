@@ -30,9 +30,10 @@ function LoginForm() {
       //if registration is successful
       setError('');
       // Navigate to profile page if the user is not admin
-      if(!decoded.isAdmin){
-        router.push('/profile')
+      if(decoded.isAdmin){
+        router.push('/admin')
       }
+      router.push('/profile')
     } catch (error) {
         if(error){
             console.log(error);
