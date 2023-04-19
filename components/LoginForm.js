@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import jwt_decode from "jwt-decode";
 
 import { loginEndPoint } from '../config/endpoints';
 
@@ -18,7 +19,11 @@ function LoginForm() {
           password,
       });
       console.log(response)
-      console.log(response.data)
+      console.log(response.data)// represents token
+      var {token} = response.data
+      // decoding JWTs token
+      var decoded = jwt_decode(token);
+      console.log(decoded)
       //if registration is successful
       setError('');
     } catch (error) {
