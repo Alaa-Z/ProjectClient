@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import jwt_decode from "jwt-decode";
 import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
 
 import { loginEndPoint } from '../config/endpoints';
 
@@ -23,7 +24,9 @@ function LoginForm() {
       });
       // console.log(response.data)// represents token
       var {token} = response.data
-      localStorage.setItem('auth-token', token);
+      // save token in Cookies
+      Cookies.set('auth-token', token, { expires: 1 });
+      // console.log(token);
       // decoding JWTs token
       var decoded = jwt_decode(token);
       // console.log(decoded)
@@ -33,6 +36,7 @@ function LoginForm() {
       if(decoded.isAdmin){
         router.push('/admin')
       }
+      console.log(token);
       router.push('/profile')
     } catch (error) {
         if(error){
