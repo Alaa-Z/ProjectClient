@@ -1,12 +1,15 @@
 import Head from 'next/head';
 import useSWR from 'swr';
 import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
 
 import {profileEndPoint} from '../../config/endpoints'
+// Components
+import LogoutButton from '../../components/LogoutButton';
 
 function Profile() {
-  // get token from Cookies
-  const token = Cookies.get('auth-token');
+  const router = useRouter();
+
   // use SWR Hooks for Data Fetching
   const { data, error } = useSWR(profileEndPoint, async (url) => {
     const res = await fetch(url, {
@@ -39,6 +42,7 @@ function Profile() {
       </Head>
       <h1>This is {data.name}'s Profile</h1>
       <p>Email: {data.email}</p>
+      <LogoutButton />
     </div>
   );
 } 
