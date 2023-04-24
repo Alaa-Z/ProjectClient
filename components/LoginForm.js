@@ -33,11 +33,11 @@ function LoginForm() {
       //if registration is successful
       setError('');
       // Navigate to profile page if the user is not admin
-      if(decoded.isAdmin){
-        router.push('/admin')
+      if (decoded.isAdmin) {
+        router.push('/admin');
+      } else {
+        router.push('/profile');
       }
-      console.log(token);
-      router.push('/profile')
     } catch (error) {
         if(error){
             console.log(error);

@@ -7,4 +7,7 @@ const profileEndPoint = 'http://localhost:5000/api/user/profile';
 // Logout 
 const logoutEndPoint = 'http://localhost:5000/api/user/logout';
 
-export {registerEndPoint, loginEndPoint, profileEndPoint, logoutEndPoint}
+// admin  
+const adminEndPoint = 'http://localhost:5000/api/admin';
+
+export {registerEndPoint, loginEndPoint, profileEndPoint, logoutEndPoint, adminEndPoint}
