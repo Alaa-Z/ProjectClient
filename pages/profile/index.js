@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import { profileEndPoint } from '../../config/endpoints';
 // Components
 import LogoutButton from '../../components/LogoutButton';
-
+import AddBook from '@/components/AddBook';
 function Profile() {
   const router = useRouter();
   const [token, setToken] = useState(null);
@@ -54,6 +54,7 @@ function Profile() {
       <h1>This is {data.name}'s Profile</h1>
       <p>Email: {data.email}</p>
       <LogoutButton />
+      <AddBook />
     </div>
   );
 }

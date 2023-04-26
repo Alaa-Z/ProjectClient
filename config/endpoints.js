@@ -10,4 +10,15 @@ const logoutEndPoint = 'http://localhost:5000/api/user/logout';
 // admin  
 const adminEndPoint = 'http://localhost:5000/api/admin';
 
-export {registerEndPoint, loginEndPoint, profileEndPoint, logoutEndPoint, adminEndPoint}
+
+// addBook
+const addBookEndPoint = 'http://localhost:5000/api/books/add';
+
+export {
+    registerEndPoint,
+    loginEndPoint, 
+    profileEndPoint,
+    logoutEndPoint,
+    adminEndPoint,
+    addBookEndPoint
+}
