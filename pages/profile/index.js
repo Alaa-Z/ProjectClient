@@ -8,6 +8,7 @@ import { profileEndPoint } from '../../config/endpoints';
 // Components
 import LogoutButton from '../../components/LogoutButton';
 import AddBook from '@/components/AddBook';
+
 function Profile() {
   const router = useRouter();
   const [token, setToken] = useState(null);
@@ -22,7 +23,7 @@ function Profile() {
   }, []);
 
   // use SWR Hooks for Data Fetching (only if the token exists)
-  const { data, error } = useSWR(token ? profileEndPoint : null, async (url) => {
+  const { data, error, mutate } = useSWR(token ? profileEndPoint : null, async (url) => {
     const res = await fetch(url, {
       headers: {
         'Content-Type': 'application/json',
@@ -47,6 +48,11 @@ function Profile() {
     return <div>Loading...</div>;
   }
 
+  const AddedBook = () => {
+    // mutate function used to fetch the data again from server 
+    mutate();
+  };
+
   return (
     <div>
       <Head>
@@ -61,7 +67,7 @@ function Profile() {
       })}
       <br></br>
       <LogoutButton />
-      <AddBook />
+      <AddBook AddedBook={AddedBook} />
     </div>
   );
 }

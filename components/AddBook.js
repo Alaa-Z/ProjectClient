@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 import { addBookEndPoint } from '../config/endpoints';
 
 
-function AddBook() {
+function AddBook({AddedBook}) {
     // create a book 
    const [title, setTitle] = useState('');
    const [author, setAuthor] = useState('');
@@ -35,15 +35,22 @@ function AddBook() {
        //if book is successfully posted
        setSuccess(true);
        setError('');
-     } catch (error) {
+
+        // clear the form
+        setTitle('');
+        setAuthor('');
+        setISBN('');
+        // refetch data
+        AddedBook(); 
+    } catch (error) {
         if(error){
             console.log(error);
             setSuccess(false);
-            setError(error.response.data);
+            setError(error.response.data.message);
             // show error message only for 3 seconds
             setTimeout(() => {
             setError('');
-            }, 2000); 
+            }, 3000); 
         } 
      }
    };
