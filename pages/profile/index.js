@@ -35,6 +35,7 @@ function Profile() {
     }
     //covert to a JSON object.
     const json = await res.json();
+    // console.log(json)
     return json;
   });
 
@@ -53,6 +54,12 @@ function Profile() {
       </Head>
       <h1>This is {data.name}'s Profile</h1>
       <p>Email: {data.email}</p>
+      {data.books.map((book) => {
+      // display all books
+        return <li key={book._id}> {book.title} by {book.author} {book.ISBN}</li>;
+      
+      })}
+      <br></br>
       <LogoutButton />
       <AddBook />
     </div>
