@@ -13,6 +13,8 @@ const adminEndPoint = 'http://localhost:5000/api/admin';
 
 // addBook
 const addBookEndPoint = 'http://localhost:5000/api/books/add';
+// delete book
+const deleteBookEndPoint = 'http://localhost:5000/api/books/delete';
 
 export {
     registerEndPoint,
@@ -20,5 +22,6 @@ export {
     profileEndPoint,
     logoutEndPoint,
     adminEndPoint,
-    addBookEndPoint
+    addBookEndPoint,
+    deleteBookEndPoint
 }

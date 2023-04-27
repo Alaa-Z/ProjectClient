@@ -8,6 +8,7 @@ import { profileEndPoint } from '../../config/endpoints';
 // Components
 import LogoutButton from '../../components/LogoutButton';
 import AddBook from '@/components/AddBook';
+import DeleteBook from '@/components/DeleteBook';
 
 function Profile() {
   const router = useRouter();
@@ -36,7 +37,7 @@ function Profile() {
     }
     //covert to a JSON object.
     const json = await res.json();
-    // console.log(json)
+    console.log(json)
     return json;
   });
 
@@ -62,8 +63,13 @@ function Profile() {
       <p>Email: {data.email}</p>
       {data.books.map((book) => {
       // display all books
-        return <li key={book._id}> {book.title} by {book.author} {book.ISBN}</li>;
-      
+        return <li key={book._id}>
+          {book.title} by {book.author} {book.ISBN}  
+          <DeleteBook  
+            AddedBook={AddedBook}  
+            id={book._id} 
+          />
+        </li>;
       })}
       <br></br>
       <LogoutButton />
