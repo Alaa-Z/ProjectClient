@@ -15,6 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout>
+        <h1> home page</h1>
 
       </MainLayout>
     </>
