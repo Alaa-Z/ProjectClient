@@ -1,3 +1,17 @@
-// define variables for colors
-$color-primary: red;
+// Define variables for colors
+$white: #fff;
+$black: #000;
+$gray:#f1f1f1;
+$blue: #2196F3;
+$inherit: inherit;
 
+/* Define  variables to store fontsizes */
+$font-normal: 1em;
+$font-small:0.8em;
+$font-large:1.6em;
+
+/* Define  variables to store breakpoints */
+$breakpoint-mobile: 599px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop:922px;
+$breakpoint-large: 1200px;

@@ -1,0 +1,72 @@
+@import "Variables";
+
+.header{
+    height: 10vh;
+    background-color: $gray; 
+    nav{
+        position: relative;
+        padding-top: 20px;
+        height: 60px;
+        .navContainer {
+            max-width: $breakpoint-large;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0 15px;
+            .listitems ul{
+                display: flex;
+                justify-content: space-between;
+                list-style-type: none;
+                li{
+                    margin-left: 60px;
+                    a{
+                        text-decoration: none;
+                        color: $inherit;
+                    }
+                } 
+            }
+        } 
+    }
+}
+
+// Styles for tablet and mobile screens 
+@media (max-width: $breakpoint-tablet) {
+    .menuIcon {
+        display: block;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .listitems {
+        padding-top: 40px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: $white;
+        height: calc(100vh - 60px);
+        transition: all 0.3s ease-in;
+        width: 0px;
+        overflow: hidden;
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            li {
+                margin-top: 32px;
+                margin-right: unset; 
+                text-align: center;
+                margin-left: 0px !important;
+
+            }
+        }
+    }
+    .show {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+    .menuIcon {
+      display: none;
+    }
+}

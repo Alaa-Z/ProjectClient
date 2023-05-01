@@ -1,0 +1,88 @@
+@import "Variables";
+
+.container {
+    display: flex;
+    flex-direction: row;  
+    height: 80vh;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: $gray;
+    .text {
+        width: 50%;
+        padding-left: 10%;
+        h2{
+            margin-bottom: 40px;
+            width: 90%;
+            font-size: $font-large;
+        }
+        p{
+            margin-bottom: 40px;
+            width: 90%;
+            font-size: $font-normal;
+
+        }
+    }
+    input[type=text] {
+        padding: 12px;
+        border: 1px solid $black;
+        float: left;
+        width: 60%;
+        max-width: 400px;
+    }
+    button {
+        float: left;
+        width: 30%;
+        padding: 10px;
+        background: $blue;
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+    }
+      
+    
+    .imageWrapper {
+        width: 45%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .image{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-desktop) {
+    .text {
+        width: 100%;
+        font-size:$font-small;
+    }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+    .container {
+      flex-direction: column;
+      .text {
+        width: 100%;
+        font-size:$font-small;
+        }
+        .imageWrapper {
+            width: 70%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            .image {
+                width: 100%;
+            }
+        }
+      
+}
+  
+   
+}
