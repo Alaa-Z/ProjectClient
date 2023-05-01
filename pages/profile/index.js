@@ -61,6 +61,7 @@ function Profile() {
       </Head>
       <h1>This is {data.name}'s Profile</h1>
       <p>Email: {data.email}</p>
+      <p>Address: {data.address}</p>
       {data.books.map((book) => {
       // display all books
         return <li key={book._id}>
