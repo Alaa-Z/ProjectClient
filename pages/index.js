@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import MainLayout from '@/components/MainLayout'
+import AllBooks from '@/components/AllBooks'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +16,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout>
-        <h1> home page</h1>
+        <h1> Latest Added Books </h1>
+        <AllBooks />
 
       </MainLayout>
     </>
