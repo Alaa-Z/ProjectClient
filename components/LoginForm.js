@@ -3,6 +3,8 @@ import axios from 'axios';
 import jwt_decode from "jwt-decode";
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
+// Style 
+import styles from '../styles/LoginFrom.module.scss'
 
 import { loginEndPoint } from '../config/endpoints';
 
@@ -50,19 +52,35 @@ function LoginForm() {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-          Email:
-      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      </label>
-      <label>
-          Password:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </label>
-      <button type="submit">Login</button>
-      {/* if the messages exist show them */}
+    <div className={styles.container}>
+      <h2> Login To Continue</h2>
+      <form className={styles.form} onSubmit={handleSubmit} >
+        <div className={styles.inputField}> 
+          <label className={styles.label}>
+            E-mail:
+          </label>
+          <br></br>
+          <input type="email" placeholder="Enter Your E-mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            />
+        </div>
+        <div className={styles.inputField}> 
+          <label className={styles.label}>
+            Password:
+          </label>
+          <br></br>
+          <input type="password"
+            value={password} 
+            placeholder="Enter Your Password"
+            onChange={(e) => setPassword(e.target.value)} />
+          </div>
+         <button type="submit">Login</button>
+       {/* if the messages exist show them */}
       {error && <p>{error}</p>}
     </form>
+  </div>
+   
   );
 }
 

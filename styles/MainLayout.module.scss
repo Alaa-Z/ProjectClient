@@ -7,3 +7,19 @@
     min-height: 80vh;
     max-width: $breakpoint-large;
 }
+
+.mainWithImage{
+    width: 100%;
+    margin: auto;
+    padding-top: 20px;
+    min-height: 80vh;
+    height: 100%;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+      ),url("../public/background.jpg");
+    background-repeat: no-repeat;
+    background-position:center ;
+    background-size:cover ;
+    
+}

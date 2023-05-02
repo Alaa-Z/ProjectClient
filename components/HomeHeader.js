@@ -1,11 +1,15 @@
 import Image from 'next/image'
 import booksImg from '../public/books.jpg'
+import { useRouter } from 'next/router';
 
 // Style 
 import styles from '../styles/HomeHeader.module.scss'
 
 export default function HomeHeader() {
+    const router = useRouter();
+
     return (
+        router.pathname === '/' ?
         <div className={styles.container}>
             <div className={styles.text}>
                 <h2> Neque porro quisquam est qui dolorem ipsum porro quisquam est qui dolorem ipsum </h2>
@@ -25,5 +29,6 @@ export default function HomeHeader() {
                 />
             </div>
         </div> 
+        : null
     )
-} 
+}  

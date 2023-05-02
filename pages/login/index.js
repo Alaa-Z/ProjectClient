@@ -1,14 +1,17 @@
 import LoginForm from 'components/LoginForm'
 import Head from 'next/head';
+import MainLayout from '@/components/MainLayout';
 
 function Login() {
   return (
     <div>
         <Head>
-        <title>Login</title>
+          <title>Login</title>
         </Head>
-        <h1>Login</h1>
-        <LoginForm />
+        <MainLayout>
+          <LoginForm />
+        </MainLayout>
+        
     </div>
   )
 }

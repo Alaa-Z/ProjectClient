@@ -1,0 +1,59 @@
+@import "Variables";
+.container{
+    margin: auto;
+    width: 50%;
+    max-width: $breakpoint-tablet;
+    padding: 2rem;
+    border-radius: 6px;
+    background-color: $gray;
+    min-height: 55vh;
+    margin-top: 10vh;
+    h2 {
+        margin-bottom: 2rem;
+        position: relative;
+        text-align: center;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .inputField{
+            width: 80%;
+            input {
+                height: 40px;
+                border-radius: 6px;
+                border: 1px solid $black;
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+        .inputField:first-child {
+            margin-bottom: 1.5rem;
+        }
+        button{
+            border: none;
+            margin-top: 2rem;
+            padding: 0.4rem;
+            width: 80%;
+            height: 40px;
+            background: $blue;
+            cursor: pointer;
+            color: $white;
+            font-size: $font-normal;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+        }
+        ::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+            padding-left: 10px;
+        }    
+    }
+}
+@media (max-width:$breakpoint-tablet) {
+    .container{
+        width: 80%;
+    }
+    
+}
+
