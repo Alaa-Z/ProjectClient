@@ -1,5 +1,6 @@
 import RegisterForm from 'components/RegisterForm'
 import Head from 'next/head';
+import MainLayout from '@/components/MainLayout';
 
 function Register() {
   return (
@@ -7,8 +8,9 @@ function Register() {
         <Head>
         <title>Sign up</title>
         </Head>
-        <h1>Register</h1>
-        <RegisterForm />
+        <MainLayout>
+          <RegisterForm />
+        </MainLayout>
     </div>
   )
 }

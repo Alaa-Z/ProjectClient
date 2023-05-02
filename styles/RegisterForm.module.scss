@@ -1,0 +1,102 @@
+@import "Variables";
+
+.container{
+    margin: auto;
+    width: 40%;
+    max-width: $breakpoint-tablet;
+    padding: 2rem;
+    border-radius: 6px;
+    background-color: $gray;
+    min-height: 55vh;
+    margin-top: 10vh;
+    h2 {
+        margin-bottom: 2rem;
+        position: relative;
+        text-align: center;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .inputField{
+            width: 90%;
+            position: relative;
+            span{
+                color: orange;
+            }
+            input {
+                height: 40px;
+                border-radius: 6px;
+                border: 1px solid $black;
+                margin-top: 10px;
+                width: 100%;
+                padding-left: 10px;
+            }
+            .icon{
+                position: absolute;
+                top: 70%;
+                left: 10px;
+                font-size: 20px;
+                transform: translateY(-50%);
+            }
+        }
+        .inputField:first-child {
+            margin-bottom: 1.5rem;
+        }
+        button{
+            border: none;
+            margin-top: 2rem;
+            padding: 0.4rem;
+            width: 90%;
+            height: 40px;
+            background: $blue;
+            cursor: pointer;
+            color: $white;
+            font-size: $font-normal;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+        }
+        ::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+            padding-left: 50px;
+        }    
+    }
+    .signup{
+        text-align: center;
+        margin-top: 30px;
+        a{
+            color: $blue;
+            text-decoration: none;
+        }
+    }
+    .success{
+        color: white;
+        margin-top: 20px;
+        margin-bottom:20px;
+        background-color: $green;
+        width: 90%;
+        text-align: center;
+        height: 40px;
+        padding-top: 10px;
+        border-radius: 6px;
+    }
+    .error{
+        color: white;
+        margin-top: 20px;
+        margin-bottom:20px;
+        background-color: $red;
+        width: 90%;
+        text-align: center;
+        height: 50px;
+        padding-top: 10px;
+        border-radius: 6px;
+    }
+}
+@media (max-width:$breakpoint-tablet) {
+    .container{
+        width: 80%;
+    }
+    
+}
+

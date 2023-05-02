@@ -7,12 +7,14 @@ import { useRouter } from 'next/router';
   const router = useRouter();
   // Define which page is rendering 
   const isLoginPage = router.pathname === '/login';
+  const isRegister  = router.pathname === '/register';
+
 
    return (
      <>
       <Header />
       {/* Change class nmae based on the rendered page  */}
-      <main className={isLoginPage ? styles.mainWithImage : styles.main} >{children}</main>
+      <main className={isLoginPage || isRegister ? styles.mainWithImage : styles.main} >{children}</main>
       <Footer />
      </>
    )
