@@ -1,0 +1,98 @@
+
+@import "Variables";
+
+.footer {
+    background: $gray;
+    height: auto;
+    width: 100vw;
+    padding-top: 40px; 
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      h3 {
+        font-size: $font-xl;
+        font-weight: 500;
+        text-transform: capitalize;
+        line-height: 3rem;
+      }
+      p {
+        margin: 10px auto;
+        max-width: 400px;
+        line-height: 28px;
+        font-size: $font-normal;
+      }
+  
+      .socials {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 3rem 0;
+        li {
+          margin: 0 10px;
+          a {
+            text-decoration: none;
+            color: $inherit;
+            padding: 5px;
+            .icon {
+              font-size: $font-large;
+              width: 40px;
+              transition: color .4s ease;
+            }
+             .icon:hover {
+                color: $blue;
+            }
+          }
+        }
+      }
+    }
+    .footerBottom {
+        text-align: center;
+        max-width: $breakpoint-large; 
+        margin: auto;
+        padding: 20px;
+        padding-bottom: 40px;
+      p {
+        font-size: 14px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+        a {
+            color: $black;
+            font-size: $font-normal;
+            text-decoration: none;
+        }
+      }  
+      .menu {
+        float: right;
+        ul {
+          display: flex;
+          li {
+            padding-right: 10px;
+            display: block;
+            a {
+              text-decoration: none;
+              color: $inherit;
+              :hover {
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+}
+
+@media (max-width:$breakpoint-tablet) {
+    .menu{
+        ul {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: flex;
+       
+        }
+    }
+    
+}
