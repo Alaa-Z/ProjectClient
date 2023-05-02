@@ -83,10 +83,10 @@ function LoginForm() {
           </div>
          <button type="submit">Login</button>
        {/* if the messages exist show them */}
-      {error && <p>{error}</p>}
+      {error && <p className={styles.error}>{error}</p>}
     </form>
     <div className={styles.signup}>
-      Create an account <Link href="/register"> Signup now</Link>
+      Create an account <Link href="/register"> SignUp Now</Link>
     </div>
   </div>
    
