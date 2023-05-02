@@ -25,7 +25,7 @@ const LogoutButton = () => {
         console.error(error);
     }
 }, [router]);
-return <button onClick={handleLogout}>Logout</button>;
+return <a onClick={handleLogout}>Logout</a>
 };
 
 export default LogoutButton;

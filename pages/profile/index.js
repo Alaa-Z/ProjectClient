@@ -6,9 +6,10 @@ import { useRouter } from 'next/router';
 
 import { profileEndPoint } from '../../config/endpoints';
 // Components
-import LogoutButton from '../../components/LogoutButton';
 import AddBook from '@/components/AddBook';
 import DeleteBook from '@/components/DeleteBook';
+import MainLayout from '@/components/MainLayout'; 
+import AllBooks from '@/components/AllBooks';
 
 function Profile() {
   const router = useRouter();
@@ -59,22 +60,27 @@ function Profile() {
       <Head>
         <title>Profile page</title>
       </Head>
-      <h1>This is {data.name}'s Profile</h1>
-      <p>Email: {data.email}</p>
-      <p>Address: {data.address}</p>
-      {data.books.map((book) => {
-      // display all books
-        return <li key={book._id}>
-          {book.title} by {book.author} {book.ISBN}  
-          <DeleteBook  
-            AddedBook={AddedBook}  
-            id={book._id} 
-          />
-        </li>;
-      })}
-      <br></br>
-      <LogoutButton />
+      <MainLayout>
+        <h1 className="h1-heading"> Latest Added Books </h1>
+        <AllBooks />
+
+        <h1>This is {data.name}'s Profile</h1>
+        <p>Email: {data.email}</p>
+        <p>Address: {data.address}</p>
+        {data.books.map((book) => {
+        // display all books
+          return <li key={book._id}>
+            {book.title} by {book.author} {book.ISBN}  
+            <DeleteBook  
+              AddedBook={AddedBook}  
+              id={book._id} 
+            />
+          </li>;
+        })}
+        <br></br>
       <AddBook AddedBook={AddedBook} />
+      </MainLayout>
+      
     </div>
   );
 }

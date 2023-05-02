@@ -38,6 +38,8 @@ function LoginForm() {
       // console.log(decoded)
       //if registration is successful
       setError('');
+      setEmail('')
+      setPassword('')
       // Navigate to profile page if the user is not admin
       if (decoded.isAdmin) {
         router.push('/admin');

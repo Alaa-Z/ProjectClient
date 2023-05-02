@@ -6,6 +6,9 @@ import styles from '../styles/Header.module.scss'
 import {GiHamburgerMenu} from 'react-icons/gi';
 import HomeHeader from './HomeHeader';
 
+import Cookies from 'js-cookie';
+import LogoutButton from './LogoutButton';
+
 
 function Header() {
   // for  navbar in small screens 
@@ -15,6 +18,9 @@ function Header() {
   const handleShowNavbar = () => {
     setShowNav(!showNav)
   }
+
+  const authToken = Cookies.get('auth-token');
+
 
   return (
     <>
@@ -40,15 +46,15 @@ function Header() {
                   About
                 </Link>
               </li>
+
               <li>
-                <Link href="/">
-                  About
-                </Link>
-              </li> <li>
-                <Link href="/">
-                  About
-                </Link>
-              </li>
+              {authToken ? (
+                <LogoutButton />
+              ) : (
+                <Link href="/login">Account</Link>
+              )}
+                        
+              </li> 
             </ul>
           </div>
         </div>
