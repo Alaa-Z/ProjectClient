@@ -10,6 +10,8 @@ import AddBook from '@/components/AddBook';
 import DeleteBook from '@/components/DeleteBook';
 import MainLayout from '@/components/MainLayout'; 
 import AllBooks from '@/components/AllBooks';
+// style
+import styles from '../../styles/profile.module.scss'
 
 function Profile() {
   const router = useRouter();
@@ -61,26 +63,41 @@ function Profile() {
         <title>Profile page</title>
       </Head>
       <MainLayout>
-        <h1 className="h1-heading"> Latest Added Books </h1>
-        <AllBooks />
+        <h1 className={styles.h1}>Hi {data.name}!</h1>
+        {/* <p>Email: {data.email}</p>
+        <p>Address: {data.address}</p> */}
+        <div className={styles.container}>
+          <div className={styles.item}>
+            <AddBook AddedBook={AddedBook} />
+          </div>
 
-        <h1>This is {data.name}'s Profile</h1>
-        <p>Email: {data.email}</p>
-        <p>Address: {data.address}</p>
-        {data.books.map((book) => {
-        // display all books
-          return <li key={book._id}>
-            {book.title} by {book.author} {book.ISBN}  
-            <DeleteBook  
-              AddedBook={AddedBook}  
-              id={book._id} 
-            />
-          </li>;
-        })}
-        <br></br>
-      <AddBook AddedBook={AddedBook} />
+          <div className={styles.item}>
+            <div>
+              <h1> Your added books </h1>
+              {data.books.map((book) => {
+                // display all books
+                return <li key={book._id}>
+                  {book.title} by {book.author} {book.ISBN}  
+                  <DeleteBook  
+                    AddedBook={AddedBook}  
+                    id={book._id} 
+                  />
+                </li>;
+              })}
+            </div>
+            <div>
+            <h1 className="h1-heading"> Latest Added Books </h1>
+            <AllBooks />
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            Div to work with messages here!
+          </div>
+
+        </div>
+        
       </MainLayout>
-      
     </div>
   );
 }

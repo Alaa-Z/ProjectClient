@@ -9,9 +9,9 @@ export default function AllBooks() {
     // use SWR Hooks for Data Fetching
     const { data, error } = useSWR(allBooksEndPoint, async (url) => {
         const res = await fetch(url);
-        console.log(res);
+        // console.log(res);
         const json = await res.json();
-        console.log(data);
+        // console.log(data);
         return json;
     });
 

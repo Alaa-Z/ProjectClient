@@ -41,19 +41,21 @@ function Header() {
                   Home
                 </Link>
               </li>
+
               <li>
-                <Link href="/">
-                  About
-                </Link>
-              </li>
+              {authToken ? (
+                <Link href="/profile">Profile</Link>
+              ) : (
+                <Link href="/login">Account</Link>
+              )}        
+              </li> 
 
               <li>
               {authToken ? (
                 <LogoutButton />
               ) : (
                 <Link href="/login">Account</Link>
-              )}
-                        
+              )}        
               </li> 
             </ul>
           </div>

@@ -31,22 +31,21 @@ function AddBook({AddedBook}) {
             }
         });
         
-       console.log(response)
+        //console.log(response)
        //if book is successfully posted
        setSuccess(true);
        setError('');
-
-        // clear the form
-        setTitle('');
-        setAuthor('');
-        setISBN('');
-        // refetch data
-        AddedBook(); 
+       // clear the form
+       setTitle('');
+       setAuthor('');
+       setISBN('');
+       // refetch data
+       AddedBook(); 
     } catch (error) {
         if(error){
-            console.log(error);
+            console.log(error.response);
             setSuccess(false);
-            setError(error.response.data.message);
+            setError(error.response.data);
             // show error message only for 3 seconds
             setTimeout(() => {
             setError('');
