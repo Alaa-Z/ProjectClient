@@ -9,7 +9,9 @@ export default function AllBooks() {
     // use SWR Hooks for Data Fetching
     const { data, error } = useSWR(allBooksEndPoint, async (url) => {
         const res = await fetch(url);
+        console.log(res);
         const json = await res.json();
+        console.log(data);
         return json;
     });
 
@@ -23,6 +25,8 @@ export default function AllBooks() {
                 <li key={book._id}>
                     <GiBookCover className={styles.icon} />
                     <p>{book.title} by {book.author} </p>
+                    <br></br>
+                    <p> Added by: {book.user.name} </p>
                 </li>
             ))}
             </ul>
