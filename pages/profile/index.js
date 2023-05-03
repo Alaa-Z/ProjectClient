@@ -72,22 +72,25 @@ function Profile() {
           </div>
 
           <div className={styles.item}>
-            <div>
-              <h1> Your added books </h1>
-              {data.books.map((book) => {
-                // display all books
-                return <li key={book._id}>
-                  {book.title} by {book.author} {book.ISBN}  
-                  <DeleteBook  
-                    AddedBook={AddedBook}  
-                    id={book._id} 
-                  />
-                </li>;
-              })}
+            <div className={styles.itemDiv}>
+              <h1>{data.name} Book list  </h1>
+              <ol>
+                {data.books.map((book) => {
+                  // display all books
+                  return <li key={book._id}>
+                    <span>{book.title} by {book.author}</span>
+                    <DeleteBook
+                      AddedBook={AddedBook}  
+                      id={book._id} 
+                    />
+                  </li>;
+                })}
+              </ol>
             </div>
-            <div>
-            <h1 className="h1-heading"> Latest Added Books </h1>
-            <AllBooks />
+
+            <div className={styles.itemDiv} >
+              <h1 className="h1-heading"> Latest Added Books </h1>
+              <AllBooks />
             </div>
           </div>
 

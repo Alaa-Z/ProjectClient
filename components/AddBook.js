@@ -4,6 +4,9 @@ import Cookies from 'js-cookie';
 
 import { addBookEndPoint } from '../config/endpoints';
 
+// Style 
+import styles from '../styles/AddBook.module.scss'
+
 
 function AddBook({AddedBook}) {
     // create a book 
@@ -54,24 +57,30 @@ function AddBook({AddedBook}) {
      }
    };
    return (
-    <form onSubmit={handleSubmit}>
-        <p> Add a book: </p>
+    <form onSubmit={handleSubmit} className={styles.form}>
+        <h1> Add A Book:</h1>
         <label>
-            Title:
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+            Title<span>*</span>
         </label>
+        <br></br>
+        <input className={styles.input} type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <br></br>
         <label>
-            Author:
-        <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} />
+            Author<span>*</span>
         </label>
+        <br></br>
+        <input className={styles.input} type="text" value={author} onChange={(e) => setAuthor(e.target.value)} />
+        <br></br>
         <label>
-            ISBN:
-            <input type="text" value={ISBN} onChange={(e) => setISBN(e.target.value)} />
+            ISBN<span>*</span>
         </label>
-        <button type="submit">Add a book</button>
+        <br></br>
+        <input className={styles.input} type="text" value={ISBN} onChange={(e) => setISBN(e.target.value)} />
+        <br></br>
+        <button className={styles.btn} type="submit">Add a book</button>
         {/* if the messages exist show them */}
-        {error && <p>{error}</p>}
-        {success && <p>Book added successfully!</p>}
+        {error && <p className={styles.error}>{error}</p>}
+        {success && <p className={styles.success}>Book added successfully!</p>}
      </form>
    );
 }

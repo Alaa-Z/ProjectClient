@@ -1,0 +1,58 @@
+@import "Variables";
+
+.form{
+    h1{
+        margin-bottom: 10px;
+    }
+    span{
+        color: $red;
+    }
+    .input{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: 0.4rem;
+        width: 90%;
+        height: 40px;
+        border: 1px solid $black;
+        font-size: $font-normal;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        border-radius: 6px;
+    }
+    .btn{
+        border: none;
+        margin-top: 2rem;
+        padding: 0.4rem;
+        width: 90%;
+        height: 40px;
+        background: $blue;
+        cursor: pointer;
+        color: $white;
+        font-size: $font-normal;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        border-radius: 6px;
+    }
+    .success{
+        color: white;
+        margin-top: 20px;
+        margin-bottom:20px;
+        background-color: $green;
+        width: 90%;
+        text-align: center;
+        height: 40px;
+        padding-top: 10px;
+        border-radius: 6px;
+    }
+    .error{
+        color: white;
+        margin-top: 20px;
+        margin-bottom:20px;
+        background-color: $red;
+        width: 90%;
+        text-align: center;
+        height: 50px;
+        padding-top: 10px;
+        border-radius: 6px;
+    }
+}
