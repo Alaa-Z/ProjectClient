@@ -4,7 +4,14 @@ import { allBooksEndPoint } from '../config/endpoints';
 import styles from '../styles/AllBooks.module.scss'
 import { GiBookCover } from 'react-icons/gi';
 
+import { useRouter } from 'next/router';
+
+
 export default function AllBooks() {
+
+    const router = useRouter();
+    // Define which page is rendering 
+    const isHomepage  = router.pathname === '/';
 
     // use SWR Hooks for Data Fetching
     const { data, error } = useSWR(allBooksEndPoint, async (url) => {
@@ -19,7 +26,7 @@ export default function AllBooks() {
     if (!data) return <div>Loading books...</div>;
     
     return (
-        <div className={styles.container}>
+        <div className={ isHomepage ? styles.container : styles.containerinProfile}>
             <ul>
             {data.map((book) => (
                 <li key={book._id}>
