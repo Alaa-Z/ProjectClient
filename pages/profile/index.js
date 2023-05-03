@@ -10,6 +10,7 @@ import AddBook from '@/components/AddBook';
 import DeleteBook from '@/components/DeleteBook';
 import MainLayout from '@/components/MainLayout'; 
 import AllBooks from '@/components/AllBooks';
+import EditStatusBtn from '@/components/EditStatusBtn';
 // style
 import styles from '../../styles/profile.module.scss'
 
@@ -73,16 +74,31 @@ function Profile() {
 
           <div className={styles.item}>
             <div className={styles.itemDiv}>
-              <h1>{data.name} Book list  </h1>
+              <h1>{data.name} Books: </h1>
               <ol>
                 {data.books.map((book) => {
+                  console.log(book.available)
                   // display all books
                   return <li key={book._id}>
-                    <span>{book.title} by {book.author}</span>
-                    <DeleteBook
+                    <span> {book.title} by {book.author}</span>
+                    <span> 
+                      {!book.available ? (
+                        <span>Status: Available</span>
+                      ) : (
+                        <span>Status: Not available</span>
+                      )} 
+                      <br></br> <br></br>
+                      <EditStatusBtn
+                        AddedBook={AddedBook}  
+                        id={book._id} 
+                      />
+                    </span>
+                    <span> 
+                      <DeleteBook
                       AddedBook={AddedBook}  
                       id={book._id} 
                     />
+                    </span>
                   </li>;
                 })}
               </ol>
@@ -93,7 +109,6 @@ function Profile() {
               <AllBooks />
             </div>
           </div>
-
           <div className={styles.item}>
             Div to work with messages here!
           </div>

@@ -32,6 +32,16 @@
         li{
           counter-increment: step-counter;
           margin-bottom: 5px;  
+          display: block;
+          span:nth-child(2){
+            display: block;
+            margin-top: 10px;
+          }
+          span:last-child{
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 20px;
+          }
         }
         li:before {
           content: counter(step-counter);

@@ -17,8 +17,6 @@
 .deleteBtn{
     border: none;
     padding: 0.4rem;
-    width: 60px;
-    height: 40px;
     background: $red;
     cursor: pointer;
     color: $white;
@@ -26,4 +24,88 @@
     transition: all 0.3s ease;
     border-radius: 6px;
     margin-left: 20px;
-  }
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 50%;
+}
+.updateStatusBtn1{
+    border: none;
+    padding: 0.4rem;
+    background: $green;
+    cursor: pointer;
+    color: $white;
+    font-size: $font-normal;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: $white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    // outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 50%;
+}
+.updateStatusBtn2{
+    border: none;
+    padding: 0.4rem;
+    background: $orange;
+    cursor: pointer;
+    color: $white;
+    font-size: $font-normal;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 50%;
+}
