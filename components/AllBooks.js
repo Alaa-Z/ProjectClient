@@ -34,6 +34,9 @@ export default function AllBooks() {
                     <p>{book.title} by {book.author} </p>
                     <br></br>
                     <p> Added by: {book.user.name} </p>
+                    <p> Available in: {book.user.address} </p>
+                    <p> Status: {book.available ? ("Available"): ("Loaned")} </p>
+
                 </li>
             ))}
             </ul>
