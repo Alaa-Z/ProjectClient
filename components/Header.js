@@ -46,7 +46,7 @@ function Header() {
               {authToken ? (
                 <Link href="/profile">Profile</Link>
               ) : (
-                <Link href="/login">Account</Link>
+                null
               )}        
               </li> 
 

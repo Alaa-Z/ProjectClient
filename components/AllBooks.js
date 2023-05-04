@@ -4,6 +4,8 @@ import { allBooksEndPoint } from '../config/endpoints';
 import styles from '../styles/AllBooks.module.scss'
 import { GiBookCover } from 'react-icons/gi';
 
+import {GoLocation} from 'react-icons/go';
+
 import { useRouter } from 'next/router';
 
 
@@ -28,15 +30,13 @@ export default function AllBooks() {
     return (
         <div className={ isHomepage ? styles.container : styles.containerinProfile}>
             <ul>
-            {data.map((book) => (
+            {data.slice(0, 4).map((book) => (
                 <li key={book._id}>
-                    <GiBookCover className={styles.icon} />
-                    <p>{book.title} by {book.author} </p>
-                    <br></br>
-                    <p> Added by: {book.user.name} </p>
-                    <p> Available in: {book.user.address} </p>
-                    <p> Status: {book.available ? ("Available"): ("Loaned")} </p>
-
+                    <GiBookCover className={styles.bookIcon} />
+                    <p className={styles.name}> {book.title} by {book.author} </p>
+                    <p className={styles.owner}><i>Owner:{book.user.name} </i></p>
+                    <p>  <GoLocation className={styles.locationIcon} />  {book.user.address} </p>
+                    <p><b> Status:</b> {book.available ? ("Available"): ("Loaned")} </p>
                 </li>
             ))}
             </ul>
