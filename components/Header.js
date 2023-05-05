@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // Style 
 import styles from '../styles/Header.module.scss'
 // React icons 
@@ -13,13 +13,17 @@ import LogoutButton from './LogoutButton';
 function Header() {
   // for  navbar in small screens 
   const [showNav, setShowNav] = useState(false)
+  const [authToken, setAuthToken] = useState('');
 
   // toggle the value of showNav
   const handleShowNavbar = () => {
     setShowNav(!showNav)
   }
 
-  const authToken = Cookies.get('auth-token');
+  useEffect(() => {
+    setAuthToken(Cookies.get('auth-token'));
+  }, []);
+
   return (
     <>
     <header className={styles.header}>

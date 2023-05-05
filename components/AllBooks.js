@@ -27,10 +27,13 @@ export default function AllBooks() {
     if (error) return <div>Error loading books.</div>;
     if (!data) return <div>Loading books...</div>;
     
+    // Render 4 books in the home page
+    const booksNumber = isHomepage ? data.slice(0, 4) : data;
+
     return (
-        <div className={ isHomepage ? styles.container : styles.containerinProfile}>
+        <div className={styles.container}>
             <ul>
-            {data.map((book) => (
+            {booksNumber.map((book) => (
                 <li key={book._id}>
                     <GiBookCover className={styles.bookIcon} />
                     <p className={styles.name}> {book.title} by {book.author} </p>

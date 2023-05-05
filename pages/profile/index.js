@@ -42,7 +42,7 @@ function Profile() {
     }
     //covert to a JSON object.
     const json = await res.json();
-    // console.log(json)
+    console.log(json)
     return json;
   });
 
@@ -88,7 +88,11 @@ function Profile() {
                 <AddBook AddedBook={AddedBook} />
               </div>
 
-              <h1>{data.name} Books: </h1>
+              <h1>Your added books </h1>
+              
+              {data.books.length === 0 ? (
+                <p> You dit not add nay books yet</p>
+              ):
               <ol>
                 {data.books.map((book) => {
                   console.log(book.available)
@@ -114,7 +118,7 @@ function Profile() {
                     </span>
                   </li>;
                 })}
-              </ol>
+              </ol> }
               
             </div>
 

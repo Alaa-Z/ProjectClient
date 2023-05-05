@@ -20,7 +20,6 @@ const LogoutButton = ( {onLogout} ) => {
         });
         // Redirect to the login page
         Cookies.remove('auth-token');
-        onLogout();
         router.push('/login');
     } catch (error) {
         console.error(error);
