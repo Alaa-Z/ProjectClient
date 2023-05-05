@@ -13,6 +13,7 @@ import AllBooks from '@/components/AllBooks';
 import EditStatusBtn from '@/components/EditStatusBtn';
 // style
 import styles from '../../styles/profile.module.scss'
+import { GiBookCover } from 'react-icons/gi';
 
 function Profile() {
   const router = useRouter();
@@ -68,31 +69,43 @@ function Profile() {
         {/* <p>Email: {data.email}</p>
         <p>Address: {data.address}</p> */}
         <div className={styles.container}>
-          <div className={styles.item}>
-            <AddBook AddedBook={AddedBook} />
-          </div>
 
           <div className={styles.item}>
+            Div to work with messages here!
+          </div>
+          
+          {/* <div className={styles.item}>
+            <AddBook AddedBook={AddedBook} />
+          </div> */}
+
+          <div className={styles.item}>
+            <div className={styles.backgroundImg}> </div>
+            <div className={styles.iconImg}> </div>
+            
             <div className={styles.itemDiv}>
+
+              <div className={styles.itemDiv}>
+                <AddBook AddedBook={AddedBook} />
+              </div>
+
               <h1>{data.name} Books: </h1>
               <ol>
                 {data.books.map((book) => {
                   console.log(book.available)
                   // display all books
                   return <li key={book._id}>
-                    <span> {book.title} by {book.author}</span>
-                    <span> 
+                    <span> {book.title} By {book.author}</span> <br></br><br></br>
+                    <div> 
                       {!book.available ? (
                         <span>Status: Available</span>
                       ) : (
                         <span>Status: Not available</span>
                       )} 
-                      <br></br> <br></br>
                       <EditStatusBtn
                         AddedBook={AddedBook}  
                         id={book._id} 
                       />
-                    </span>
+                      </div>
                     <span> 
                       <DeleteBook
                       AddedBook={AddedBook}  
@@ -102,20 +115,21 @@ function Profile() {
                   </li>;
                 })}
               </ol>
+              
             </div>
 
-            <div className={styles.itemDiv} >
+            {/* <div className={styles.itemDiv} >
               <h1 className="h1-heading"> Latest Added Books </h1>
               <AllBooks />
-            </div>
-          </div>
-          <div className={styles.item}>
-            Div to work with messages here!
+            </div> */}
+
           </div>
 
+          
+
         </div>
-        
-      </MainLayout>
+
+    </MainLayout>
     </div>
   );
 }

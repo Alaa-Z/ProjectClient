@@ -1,6 +1,8 @@
 import Cookies from 'js-cookie';
 import { deleteBookEndPoint } from '../config/endpoints';
 
+import { MdDelete } from 'react-icons/md';
+
 function DeleteBook({id, AddedBook}) {
 
     const deleteBook = async () => {
@@ -26,7 +28,7 @@ function DeleteBook({id, AddedBook}) {
       };
     
       return (
-        <button className="deleteBtn" onClick={deleteBook}>Delete</button>
+        <button className="deleteBtn" onClick={deleteBook}><MdDelete/></button>
       );
     }
     

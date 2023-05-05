@@ -1,8 +1,19 @@
 @import "Variables";
 
 .form{
+    padding: 10px;
+    // border: 1px solid $blue;
+    padding: 10px;
+    // box-shadow: 6px 4px $blue;
+    
     h1{
         margin-bottom: 10px;
+    }
+    label{
+        display: inline-block;
+        width: 40px;
+        text-align: left;
+        margin-right: 10px; 
     }
     span{
         color: $red;
@@ -11,27 +22,31 @@
         margin-bottom: 10px;
         margin-top: 10px;
         padding: 0.4rem;
-        width: 90%;
+        width: 50%;
         height: 40px;
         border: 1px solid $black;
         font-size: $font-normal;
         border-radius: 4px;
         transition: all 0.3s ease;
         border-radius: 6px;
+        margin-left: 20px;
     }
     .btn{
         border: none;
         margin-top: 2rem;
+        margin-left: 70px;
         padding: 0.4rem;
-        width: 90%;
+        width: 10%;
         height: 40px;
         background: $blue;
         cursor: pointer;
         color: $white;
-        font-size: $font-normal;
+        font-size: $font-large;
         border-radius: 4px;
         transition: all 0.3s ease;
         border-radius: 6px;
+        // margin: auto;
+        // display: block;
     }
     .success{
         color: white;

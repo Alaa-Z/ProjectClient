@@ -30,7 +30,7 @@ export default function AllBooks() {
     return (
         <div className={ isHomepage ? styles.container : styles.containerinProfile}>
             <ul>
-            {data.slice(0, 4).map((book) => (
+            {data.map((book) => (
                 <li key={book._id}>
                     <GiBookCover className={styles.bookIcon} />
                     <p className={styles.name}> {book.title} by {book.author} </p>
