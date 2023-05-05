@@ -1,13 +1,17 @@
 @import "Variables";
 
-.container {
-    display: flex;
-    flex-direction: row;  
+.containerHeader {
+     
     height: 80vh;
     padding: 30px;
-    justify-content: center;
-    align-items: center;
+   
     background-color: $gray;
+    .container{
+        display: flex;
+        flex-direction: row; 
+        justify-content: center;
+        align-items: center;
+    }
     .text {
         width: 50%;
         padding-left: 10%;
@@ -22,25 +26,27 @@
             font-size: $font-normal;
 
         }
+        input[type=text] {
+            padding: 12px;
+            border: 1px solid $black;
+            float: left;
+            width: 60%;
+            max-width: 400px;
+        }
+        button {
+            float: left;
+            width: 30%;
+            padding: 10px;
+            background: $blue;
+            color: white;
+            font-size: 17px;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+    
+        }
     }
-    input[type=text] {
-        padding: 12px;
-        border: 1px solid $black;
-        float: left;
-        width: 60%;
-        max-width: 400px;
-    }
-    button {
-        float: left;
-        width: 30%;
-        padding: 10px;
-        background: $blue;
-        color: white;
-        font-size: 17px;
-        border: 1px solid grey;
-        border-left: none;
-        cursor: pointer;
-    }
+
       
     
     .imageWrapper {
