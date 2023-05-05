@@ -47,9 +47,9 @@ function EditStatusBtn({id, AddedBook}) {
     
       return (
         <button 
-            className={ status ? "updateStatusBtn1" : "updateStatusBtn2" }
+            className={ status ? "updateStatusBtn2" : "updateStatusBtn1" }
             onClick={updateStatus}>
-            {status ? "Mark as available" : "Mark as loaned"}
+            {status ? "Mark as loaned" : "Mark as available "}
         </button>
       );
     }

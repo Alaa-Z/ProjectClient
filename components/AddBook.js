@@ -60,7 +60,7 @@ function AddBook({AddedBook}) {
    };
    return (
     <form onSubmit={handleSubmit} className={styles.form}>
-        <h1> Add <ImBook/> </h1>
+        <h1> Add a book </h1>
         <label>
             Title<span>*</span>
         </label>

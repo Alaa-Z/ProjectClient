@@ -96,7 +96,7 @@ function Profile() {
                   return <li key={book._id}>
                     <span> {book.title} By {book.author}</span> <br></br><br></br>
                     <div> 
-                      {!book.available ? (
+                      {book.available ? (
                         <span>Status: Available</span>
                       ) : (
                         <span>Status: Not available</span>
