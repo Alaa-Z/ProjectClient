@@ -20,8 +20,6 @@ function Header() {
   }
 
   const authToken = Cookies.get('auth-token');
-
-
   return (
     <>
     <header className={styles.header}>
@@ -43,20 +41,30 @@ function Header() {
               </li>
 
               <li>
-              {authToken ? (
-                <Link href="/profile">Profile</Link>
-              ) : (
-                null
-              )}        
-              </li> 
+                <Link href="/book">
+                  Books
+                </Link>
+              </li>
 
-              <li>
+              {authToken  ? (
+                <li>
+                  <Link href="/profile">Profile</Link>
+                  </li>
+              ) 
+              : null}
+
               {authToken ? (
-                <LogoutButton />
-              ) : (
+                <li>
+                  <LogoutButton  />
+                </li>
+              ) 
+              : (
+              <li> 
                 <Link href="/login">Account</Link>
-              )}        
-              </li> 
+              </li>
+              )
+              }
+
             </ul>
           </div>
         </div>

@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 
 import { logoutEndPoint } from '../config/endpoints';
 
-const LogoutButton = () => {
+const LogoutButton = ( {onLogout} ) => {
     const router = useRouter();
     // get token from Cookies
     const token = Cookies.get('auth-token');
@@ -20,6 +20,7 @@ const LogoutButton = () => {
         });
         // Redirect to the login page
         Cookies.remove('auth-token');
+        onLogout();
         router.push('/login');
     } catch (error) {
         console.error(error);

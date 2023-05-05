@@ -42,7 +42,7 @@ function Profile() {
     }
     //covert to a JSON object.
     const json = await res.json();
-    console.log(json)
+    // console.log(json)
     return json;
   });
 
