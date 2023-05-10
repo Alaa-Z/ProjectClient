@@ -4,8 +4,10 @@ import useSWR, { mutate } from 'swr';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 
-//Rotes
+//Routes
 import { messagesEndPoint } from '../../config/endpoints';
+// Style
+import styles from '../../styles/Conversation.module.scss'
 
 import MainLayout from '@/components/MainLayout';
 
@@ -91,21 +93,30 @@ export default function conversationDetails() {
           <div>Loading</div>
         ) : (
           <div>
-            <p></p>
             <div>
-              <ul>
-                {data.messages.map(msg =>
-                  <li key={msg._id}>
-                    <strong>{msg.sender.name}: </strong>
-                    {msg.content}{' '}
-                    <span>{new Date(msg.createdAt).toLocaleString()}</span>
-                  </li>
-                )}
-              </ul>
+              <ul className={styles.list}>
+                {data.messages.map(msg => {
+                  // Change the class name based on user
+                  const messageClass = msg.sender._id === recipientId ? styles.left : styles.right;
+                  const text = msg.sender._id === recipientId ? styles.textleft : styles.textright;
+                  return (
+                    <li key={msg._id} className={styles.listItem}>
+                        <div className={`${messageClass} ${styles.message}`}>
+                          <div className={`${text}`}>
+                            <p><b>{msg.sender.name}</b></p>
+                            <p>{msg.content}</p>
+                            <p className={styles.date}>{new Date(msg.createdAt).toLocaleTimeString([], { hour: 'numeric', minute: 'numeric'})}</p>
+                          </div> 
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul> 
             </div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={styles.form} >
               <input
                 type="text"
+                placeholder='Reply'
                 value={message}
                 onChange={(event) => setMessage(event.target.value)}
               />

@@ -1,0 +1,88 @@
+@import "Variables";
+.list {
+    margin-bottom: 20px;
+    list-style: none;
+    .listItem {
+        margin: 2px;
+        width: 60%;
+        margin: 0 auto;
+        margin: auto;
+        .message {
+            padding: 10px;
+            overflow-wrap: break-word;
+            display: flex;
+            .date{
+                text-align: right;
+            }
+        }
+  
+        .right {
+            justify-content: flex-end;
+            .textright{
+                justify-content: flex-end;
+                background-color: #DCF8C6;
+                width: 50%;
+                text-align: left;
+                border-radius: 10px;
+                border: 1px solid $black;
+                padding: 10px;
+            }
+        }
+  
+        .left {
+            background-color: white;
+            .textleft{
+                justify-content: flex-start;
+                width: 50%;
+                text-align: left;
+                background-color: $gray;
+                border-radius: 10px;
+                border: 1px solid $black;
+                padding: 10px;
+            }
+
+        }
+
+    }
+}
+.form{
+    width: 90%;
+    margin: 0 auto;
+    margin: auto;
+    margin-bottom: 20px;
+    input{
+        margin-bottom: 5px;
+        margin-top: 5px;
+        padding: 0.4rem;
+        width: 50%;
+        height: 40px;
+        border: 1px solid $black;
+        font-size: $font-normal;
+        transition: all 0.3s ease;
+        border-radius: 6px;
+        margin-left: 20px;
+    }
+    button{
+        border: none;
+        margin-top: 2rem;
+        margin-left: 70px;
+        padding: 0.4rem;
+        width: 10%;
+        height: 40px;
+        background: $blue;
+        cursor: pointer;
+        color: $white;
+        font-size: $font-normal;
+        transition: all 0.3s ease;
+        border-radius: 6px;
+    }
+
+}
+  
+@media (max-width:$breakpoint-tablet) {
+    .list {
+        .listItem {
+            width: 90%;
+        }
+    }
+}
