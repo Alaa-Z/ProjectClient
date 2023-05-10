@@ -1,5 +1,6 @@
 import AllBooks from "@/components/AllBooks";
 import MainLayout from "@/components/MainLayout";
+import Search from "@/components/Search";
 import Head from 'next/head';
 
 export default function Book() {
@@ -9,6 +10,7 @@ export default function Book() {
         <title>Books</title>
         </Head>
         <MainLayout>
+            <Search />
             <div className="all">
             <AllBooks />
             </div>
