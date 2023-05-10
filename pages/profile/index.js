@@ -3,7 +3,7 @@ import Head from 'next/head';
 import useSWR from 'swr';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
-
+import Link from 'next/link';
 import { profileEndPoint } from '../../config/endpoints';
 // Components
 import AddBook from '@/components/AddBook';
@@ -42,7 +42,7 @@ function Profile() {
     }
     //covert to a JSON object.
     const json = await res.json();
-    console.log(json)
+    // console.log(json)
     return json;
   });
 
@@ -70,8 +70,8 @@ function Profile() {
         <p>Address: {data.address}</p> */}
         <div className={styles.container}>
 
-          <div className={styles.item}>
-            Div to work with messages here!
+          <div className={styles.item}>           
+            <Link href="/conversations"> Inbox </Link>
           </div>
           
           {/* <div className={styles.item}>
@@ -95,7 +95,7 @@ function Profile() {
               ):
               <ol>
                 {data.books.map((book) => {
-                  console.log(book.available)
+                  // console.log(book.available)
                   // display all books
                   return <li key={book._id}>
                     <span> {book.title} By {book.author}</span> <br></br><br></br>

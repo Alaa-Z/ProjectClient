@@ -20,6 +20,7 @@ const allBooksEndPoint = 'http://localhost:5000/api/books';
 // edit book status 
 const bookStatusEndPoint = 'http://localhost:5000/api/books/status';
 
+const messagesEndPoint ='http://localhost:5000/api/user/messages'
 
 export {
     registerEndPoint,
@@ -30,5 +31,6 @@ export {
     addBookEndPoint,
     deleteBookEndPoint,
     allBooksEndPoint,
-    bookStatusEndPoint
+    bookStatusEndPoint,
+    messagesEndPoint
 }
