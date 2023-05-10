@@ -8,6 +8,8 @@ import Cookies from 'js-cookie';
 import { messagesEndPoint } from '../../config/endpoints';
 
 import MainLayout from '@/components/MainLayout';
+// Style
+import styles from '../../styles/allConversations.module.scss'
 
 export default function allConversations() {
 
@@ -31,7 +33,7 @@ export default function allConversations() {
         'auth-token': token,
       },
     });
-    // console.log(res)
+    console.log(res)
     // in case of errors
     if (!res.ok) {
       throw new Error('Failed to fetch data');
@@ -41,6 +43,7 @@ export default function allConversations() {
     console.log(json)
     return json;
   });
+
 
     return (
         <div>
@@ -56,18 +59,30 @@ export default function allConversations() {
             <div>Loading</div>
         ):(
         <div>
-            <p> Last conversations:</p> 
-            <ul>
+            <h1 className={styles.h1} > Last conversations:</h1> 
+            <ul className={styles.list}>
             {data.map(conversation => (
-              <li key={conversation._id}>
-                {/* Show sender name */}
-                <span>{conversation.messages[conversation.messages.length - 1].sender.name}: </span> 
-                {/* <p> from: {conversation.users[0].name}</p>  */}
-                {/* Show the last message in the conversation */}
-                <span> {conversation.messages[conversation.messages.length - 1].content} </span> 
-                <Link href={`/conversations/${conversation._id}` }>
-                  Read
-                </Link>
+              <li key={conversation._id} className={styles.listItem}>
+                <div className={styles.listItemDiv} >
+                    <div className={styles.iconImg}> 
+                    </div>
+
+                    <div className={styles.msg}>
+                      <Link href={`/conversations/${conversation._id}` }  className={styles.link}>
+                        {/* Show sender name */}
+                        <div>
+                        <p className={styles.msgSender}> <b>{conversation.users[0].name}</b></p> 
+                        {/* Show the last sender in the conversation */}
+                        <p className={styles.msgBody}> {conversation.messages[conversation.messages.length - 1].sender.name}: &nbsp;
+                        {/* Show the last message in the conversation */}
+                        {conversation.messages[conversation.messages.length - 1].content} </p>
+                        </div>
+                      </Link>
+                    </div>
+                  
+                </div>
+                
+        
               </li>
             ))}
             </ul>
