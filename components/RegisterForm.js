@@ -1,3 +1,5 @@
+import React from "react";
+
 import { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import Head from 'next/head'
@@ -12,51 +14,38 @@ import { RiLockPasswordFill} from 'react-icons/ri';
 import {MdDriveFileRenameOutline} from 'react-icons/md';
 import {GoLocation} from 'react-icons/go';
 
-import { Autocomplete, useLoadScript } from "@react-google-maps/api";
-const placesLibrary = ['places'];
+import PlacesAutocomplete, {
+  geocodeByAddress,
+  getLatLng,
+} from 'react-places-autocomplete';
 
 function RegisterForm() {
   // create a user 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
-
-  const [searchResult, setSearchResult] = useState("Result: none");
+  // get address from autocomplete
   const [address, setAddress] = useState('');
+  const [coordinates, setCoordinates] = React.useState({
+    lat: null,
+    lng: null
+  });
+  const [isTyping, setIsTyping] = useState(false);
 
   // error and success messages 
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
 
-  // reference to the autocomplete input element
-  const autocompleteRef = useRef(null);
-
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
-    libraries: placesLibrary
-  });
-
-  function onLoad(autocomplete) {
-    setSearchResult(autocomplete);
-  }
-
-  function onPlaceChanged() {
-    if (searchResult != null) {
-      const place = searchResult.getPlace();
-      // console.log(place)
-      // console.log(place.name)
-      setAddress(place.name)
-      const lat = place.geometry.location.lat;
-      const lon = place.geometry.location.lng;
-      setLatitude(lat);
-      setLongitude(lon);
-    } else {
-      alert("Please enter text");
-    }
-  }
-
+  // To handle selection of the address
+  const handleSelect = async value => {
+    const results = await geocodeByAddress(value);
+    console.log(results)
+    const latLng = await getLatLng(results[0]);
+    setAddress(value);
+    setCoordinates(latLng);
+  };
+  
+  
   // to handel the form submit 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -70,8 +59,8 @@ function RegisterForm() {
         email,
         password,
         address,
-        latitude,
-        longitude
+        latitude: coordinates.lat, 
+        longitude: coordinates.lng
       });
       console.log(response)
       //if registration is successful
@@ -81,7 +70,6 @@ function RegisterForm() {
       setPassword('')
       setEmail('');
       setAddress('')
-      setSearchResult('')
       setError('');
     } catch (error) {
       if(error){
@@ -99,13 +87,6 @@ function RegisterForm() {
   };
   return (
     <>
-    <Head>
-        <script
-          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}&libraries=places&v=3.42` }
-          async
-        >
-        </script>
-      </Head>
       <div className={styles.container}>
       <h2> Create An Account</h2>
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -151,15 +132,38 @@ function RegisterForm() {
             Address:
             </label>
             <br></br>
-            <GoLocation className={styles.icon}  />
-            <Autocomplete onPlaceChanged={onPlaceChanged} onLoad={onLoad}>
-              <input
-                type="text"
-                placeholder="Enter a city name only using autocomplete!"
-                required="true"
-                style={{ paddingLeft: '30px' }}
-              />
-            </Autocomplete>
+            {isTyping ? null : <GoLocation className={styles.icon} />}
+            <PlacesAutocomplete
+              value={address}
+              onChange={(value) => {
+                setAddress(value);
+                setIsTyping(true);
+              }}
+              onSelect={handleSelect}
+              onBlur={() => setIsTyping(false)}
+            >
+            {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+            <div>
+              <input {...getInputProps({ placeholder: "Type address" })} 
+                style={{ paddingLeft: '30px' }}/>
+              <div>
+                {loading ? <div>...loading</div> : null}
+
+                {suggestions.map(suggestion => {
+                  const style = {
+                    // backgroundColor: suggestion.active ? "#41b6e6" : "#fff"
+                  };
+
+                  return (
+                    <div {...getSuggestionItemProps(suggestion, { style })}>
+                      {suggestion.description}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            )}
+            </PlacesAutocomplete>
           </div>
 
           <button type="submit">Register</button>
