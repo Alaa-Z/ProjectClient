@@ -35,7 +35,7 @@ export default function AllBooks() {
             <ul>
             {booksNumber.map((book) => (
                 <li key={book._id}>
-                    <GiBookCover className={styles.bookIcon} />
+                    {/* <GiBookCover className={styles.bookIcon} /> */}
                     <p className={styles.name}> {book.title} by {book.author} </p>
                     <p className={styles.owner}><i>Owner:{book.user.name} </i></p>
                     <p>  <GoLocation className={styles.locationIcon} />  {book.user.address} </p>

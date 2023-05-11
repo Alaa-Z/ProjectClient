@@ -1,0 +1,70 @@
+@import "Variables";
+
+.container{
+    form{
+        width: 80%;
+        display:flex;
+        margin: 0 auto;
+        flex-direction:row;
+        border:1px solid $black;
+        padding:1px
+    }
+
+    .searchInput[type=text] {
+        padding: 12px;
+        flex:4;
+        border:none;
+    }
+    .searchButton {
+        border:1px solid $gray;
+        background:$blue;
+        color:white;
+        flex:1;
+        font-size: $font-normal;
+    } 
+}
+.modal{
+    background-color: white;
+    z-index: 1;
+    min-height: 80vh;
+    .result{
+        padding-left: 40px;
+        padding-top: 40px;
+        font-size: $font-large;
+    }
+    .closeButton{
+        width: 40px;
+        height: 40px;
+        font-size: 40px;
+        background-color: transparent;
+        border: none;
+        margin-left: 40px;
+        margin-top: 40px;
+    }
+    .resultList {
+        list-style: none;
+        padding-left: 40px;
+      .listItem {
+        padding: 20px;
+        border-bottom: 1px solid $black;
+        width: 90%;
+        p{
+            margin: 10px;
+        }
+        .name{
+            text-align: left;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: $font-normal;
+        }
+        .locationIcon{
+            font-size: 20px;
+            color: $blue;
+        }
+       
+      }
+    }
+
+    
+  }
+
