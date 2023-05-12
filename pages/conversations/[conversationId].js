@@ -120,7 +120,7 @@ export default function conversationDetails() {
                 value={message}
                 onChange={(event) => setMessage(event.target.value)}
               />
-              <button type="submit">Send</button>
+              <button className={styles.btn} type="submit">Send</button>
 
               {errorMsg && <div>Error: {errorMsg}</div>}
               

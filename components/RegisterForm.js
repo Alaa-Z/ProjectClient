@@ -169,7 +169,7 @@ function RegisterForm() {
           <button type="submit">Register</button>
           {/* if the messages exist show them */}
           {error && <p className={styles.error}>{error}</p>}
-          {success && <p className={styles.success}>User added successfully!</p>}
+          {success && <p className={styles.success}>User registered successfully! Please check your email to verify the account</p>}
         </form>
         <div className={styles.signup}>
           Already a Member? <Link href="/login"> Login </Link>

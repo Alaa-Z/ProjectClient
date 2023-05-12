@@ -46,38 +46,27 @@
     }
 }
 .form{
-    width: 90%;
+    width: 80%;
+    display:flex;
     margin: 0 auto;
-    margin: auto;
-    margin-bottom: 20px;
-    input{
-        margin-bottom: 5px;
-        margin-top: 5px;
-        padding: 0.4rem;
-        width: 50%;
-        height: 40px;
-        border: 1px solid $black;
-        font-size: $font-normal;
-        transition: all 0.3s ease;
-        border-radius: 6px;
-        margin-left: 20px;
+    flex-direction:row;
+    border:1px solid $black;
+    padding:1px;
+    input[type=text] {
+        padding: 12px;
+        flex:4;
+        border:none;
     }
-    button{
-        border: none;
-        margin-top: 2rem;
-        margin-left: 70px;
-        padding: 0.4rem;
-        width: 10%;
-        height: 40px;
-        background: $blue;
-        cursor: pointer;
-        color: $white;
+    button {
+        border:1px solid $gray;
+        background:$blue;
+        color:white;
+        flex:1;
         font-size: $font-normal;
-        transition: all 0.3s ease;
-        border-radius: 6px;
-    }
-
+    } 
 }
+
+
   
 @media (max-width:$breakpoint-tablet) {
     .list {

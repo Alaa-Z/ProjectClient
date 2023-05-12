@@ -7,6 +7,7 @@ import { GiBookCover } from 'react-icons/gi';
 import {GoLocation} from 'react-icons/go';
 
 import { useRouter } from 'next/router';
+import SendMsgBtn from './SendMsgBtn';
 
 
 export default function AllBooks() {
@@ -20,7 +21,7 @@ export default function AllBooks() {
         const res = await fetch(url);
         // console.log(res);
         const json = await res.json();
-        // console.log(data);
+        console.log(data);
         return json;
     });
 
@@ -37,7 +38,13 @@ export default function AllBooks() {
                 <li key={book._id}>
                     {/* <GiBookCover className={styles.bookIcon} /> */}
                     <p className={styles.name}> {book.title} by {book.author} </p>
-                    <p className={styles.owner}><i>Owner:{book.user.name} </i></p>
+                    <div className={styles.ownerDiv} >
+                        <p className={styles.owner}><i>Owner: {book.user.name} </i></p>
+                        <SendMsgBtn
+                            recipientId= {book.user._id}
+                            recipientName= {book.user.name}
+                        />
+                    </div>
                     <p>  <GoLocation className={styles.locationIcon} />  {book.user.address} </p>
                     <p><b> Status:</b> {book.available ? ("Available"): ("Loaned")} </p>
                 </li>

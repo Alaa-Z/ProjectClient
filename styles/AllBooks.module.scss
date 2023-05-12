@@ -10,6 +10,31 @@
         margin: auto;
         width: 80%;
         li {
+            .ownerDiv{
+                display: flex;
+                button{
+                    margin: 10px;
+                    border: none;
+                    background: $blue;
+                    cursor: pointer;
+                    color: $white;
+                    font-size: $font-normal;
+                    transition: all 0.3s ease;
+                    border-radius: 6px;
+                    border-style: none;
+                    cursor: pointer;
+                    font-size: $font-small;
+                    height: 30px;
+                    text-align: center;
+                    user-select: none;
+                    -webkit-user-select: none;
+                    touch-action: manipulation;
+                    width: 60px;
+                    margin-left: 50px;
+                    margin-top: 10px;
+                }
+
+            }
             padding: 10px;
             margin: 10px;
             list-style: none; 
@@ -22,17 +47,15 @@
                 margin-bottom: 10px;
                 font-weight: bold;
                 font-size: $font-normal;
+                margin: 10px;
+
             }
-            .bookIcon{
-                font-size: 45px;
-                margin: auto;
-                display: block;
-                margin-bottom: 10px;
-            }
+
             .locationIcon{
                 font-size: 20px;
                 color: $blue;
             }
+           
         }
     }
    
