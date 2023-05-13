@@ -30,7 +30,7 @@ function Header() {
       <nav>
         <div className={styles.navContainer} >
             <div className={styles.logo}>
-              <h1>logo</h1>
+              {/* <h1>logo</h1> */}
             </div>
             <div className={styles.menuIcon} onClick={handleShowNavbar}>
             <GiHamburgerMenu />
@@ -64,7 +64,7 @@ function Header() {
               ) 
               : (
               <li> 
-                <Link href="/login">Account</Link>
+                <Link href="/login">Log in</Link>
               </li>
               )
               }

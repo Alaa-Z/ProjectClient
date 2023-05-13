@@ -1,9 +1,14 @@
 @import "Variables";
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital@1&family=Poppins&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    line-height:1.6;
+}
+body{
+    background-color: $white;
 }
 .h1-heading{
     text-align: center;

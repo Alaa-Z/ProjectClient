@@ -3,10 +3,11 @@
 .header{
     height: 10vh;
     background-color: $gray; 
+
     nav{
         position: relative;
         padding-top: 20px;
-        height: 60px;
+        height: 80px;
         .navContainer {
             max-width: $breakpoint-large;
             display: flex;
@@ -14,6 +15,13 @@
             align-items: center;
             margin: 0 auto;
             padding: 0 15px;
+            .logo{
+                
+                img{
+                    width: 20px;
+                }
+        
+            }
             .listitems ul{
                 display: flex;
                 justify-content: space-between;
@@ -23,6 +31,11 @@
                     a{
                         text-decoration: none;
                         color: $inherit;
+                        padding: 10px;
+                    }
+                    a:hover{
+                        color: $blue;
+
                     }
                 } 
             }
@@ -45,6 +58,8 @@
         top: 0;
         background-color: $white;
         height: calc(100vh - 60px);
+        // height: 200vh;
+        // height: 100%;
         transition: all 0.3s ease-in;
         width: 0px;
         overflow: hidden;
@@ -62,7 +77,8 @@
         }
     }
     .show {
-        width: 100%;
+        width: 60%;
+        border-left: 1px solid $blue;
     }
 }
 

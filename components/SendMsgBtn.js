@@ -1,15 +1,38 @@
 import Modal from 'react-modal';
-import { useState, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import Link from 'next/link'
 
 // Routes
 import { messagesEndPoint } from '../config/endpoints';
+// import styles 
+import styles from '../styles/SendMsgBtn.module.scss'
 
-export default function SendMsgBtn({recipientId}) {
+// Icons
+import { AiFillCloseCircle } from 'react-icons/ai';
+import { BsFillSendFill } from 'react-icons/bs';
+
+
+export default function SendMsgBtn({recipientId, recipientName}) {
+
+  // to ckeck if user is loggedin
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [content, setContent] = useState('');
+
+  // error and success messages 
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+
+  // use it to set setIsLoggedIn to true when user is loggedin
+  useEffect(() => {
+    if(Cookies.get('auth-token')){
+      setIsLoggedIn(true)
+    }
+  },[]);
 
   // close the modal
   const closeModal = () => {
@@ -36,30 +59,76 @@ export default function SendMsgBtn({recipientId}) {
       });
     
       console.log(response.data);
-      closeModal();
+      setSuccess(true);
+      //clear the form
+      setError('');
+      setContent('')
+      // closeModal();
     } catch (error) {
       console.error(error);
+      setSuccess(false);
+          if(error.response.data){
+            setError(error.response.data);
+          }
+          // show error message only for 3 seconds
+          setTimeout(() => {
+          setError('');
+          }, 3000)
     }
   };
 
   return (
     <>
-      <div>
+     <div>
         <button onClick={() => setIsModalOpen(true)}> Connect </button>
       </div>
-      <Modal isOpen={isModalOpen} onRequestClose={closeModal}>
-        <button onClick={closeModal}>X</button>
+      {/* {!isLoggedIn && (
+      <Modal isOpen={true} onRequestClose={closeModal}  className={`${styles.modal}`}>
+        <button onClick={closeModal} className={`${styles.closeButton}`}>
+          <AiFillCloseCircle/>
+        </button>
+        <p>Please log in first to send a message.</p>
+      </Modal>
+      )} */}
+
+      <Modal isOpen={isModalOpen} onRequestClose={closeModal}  className={`${styles.modal}`}>
+        {!isLoggedIn ? (
+          <div>
+            <button onClick={closeModal} className={`${styles.closeButton}`}>
+            <AiFillCloseCircle/>
+            </button>
+            <p>Please log in first to send a message.</p>
+            <Link  className={`${styles.link}`} href="/login"> Login </Link>
+          </div>
+        )
+        : 
+        <div>
+        <button onClick={closeModal} className={`${styles.closeButton}`}>
+          <AiFillCloseCircle/>
+        </button>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="content">Message:</label>
-          <input
+          <p className={`${styles.to}`}>To: {recipientName} </p>
+          <label htmlFor="content" className={`${styles.label}`} >Message:</label><br></br>
+          <textarea
             type="text"
             id="content"
             value={content}
             onChange={handleMessageChange}
-          />
-          <button type="submit">Send</button>
-        </form>
+          >
+          </textarea>
+          <br></br>
+          <button type="submit" className={`${styles.sendButton}`}> Send <BsFillSendFill/></button>
+          {error && <p className={styles.error}>{error}</p>}
+          {success && <p className={styles.success}> Your message sent successfully!</p>}
+        </form> 
+        </div>
+        }
       </Modal>
+
+
+
+     
+
     </>
   );
 }

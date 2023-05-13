@@ -12,6 +12,7 @@ import SendMsgBtn from './SendMsgBtn';
 
 export default function AllBooks() {
 
+    
     const router = useRouter();
     // Define which page is rendering 
     const isHomepage  = router.pathname === '/';
@@ -46,7 +47,7 @@ export default function AllBooks() {
                         />
                     </div>
                     <p>  <GoLocation className={styles.locationIcon} />  {book.user.address} </p>
-                    <p><b> Status:</b> {book.available ? ("Available"): ("Loaned")} </p>
+                    <p className={styles.palce}><b> Status:</b> {book.available ? ("Available"): ("Loaned")} </p>
                 </li>
             ))}
             </ul>
