@@ -1,28 +1,27 @@
-const endPoint = process.env.ENDPOINT_URL
 
 // REGISTER API
-const registerEndPoint = `${endPoint}/user/register`;
+const registerEndPoint = `${process.env.NEXT_PUBLIC_ENDPOINT_URL}/user/register`;
 // Log in API
-const loginEndPoint = `${endPoint}/user/login`;
+const loginEndPoint = `${process.env.NEXT_PUBLIC_ENDPOINT_URL}/user/login`;
 // ProfileEndPoint
-const profileEndPoint = `${endPoint}/user/profile`;
+const profileEndPoint = `${process.env.NEXT_PUBLIC_ENDPOINT_URL}/user/profile`;
 // Logout 
-const logoutEndPoint = `${endPoint}/user/logout`;
+const logoutEndPoint = `${process.env.NEXT_PUBLIC_ENDPOINT_URL}/user/logout`;
 
 // admin  
-const adminEndPoint = `${endPoint}/admin`;
+const adminEndPoint = `${process.env.NEXT_PUBLIC_ENDPOINT_URL}/admin`;
 
 
 // addBook
-const addBookEndPoint = `${endPoint}/books/add`;
+const addBookEndPoint = `${process.env.NEXT_PUBLIC_ENDPOINT_URL}/books/add`;
 // delete book
-const deleteBookEndPoint = `${endPoint}/books/delete`;
+const deleteBookEndPoint = `${process.env.NEXT_PUBLIC_ENDPOINT_URL}/books/delete`;
 // all books 
-const allBooksEndPoint = `${endPoint}/books`;
+const allBooksEndPoint = `${process.env.NEXT_PUBLIC_ENDPOINT_URL}/books`;
 // edit book status 
-const bookStatusEndPoint = `${endPoint}/books/status`;
+const bookStatusEndPoint = `${process.env.NEXT_PUBLIC_ENDPOINT_URL}/books/status`;
 
-const messagesEndPoint =`${endPoint}/user/messages`;
+const messagesEndPoint =`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/user/messages`;
 
 export {
     registerEndPoint,
