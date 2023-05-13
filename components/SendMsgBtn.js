@@ -12,6 +12,8 @@ import styles from '../styles/SendMsgBtn.module.scss'
 // Icons
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { BsFillSendFill } from 'react-icons/bs';
+// to fix react-modal: App element is not defined error 
+Modal.setAppElement('body');
 
 
 export default function SendMsgBtn({recipientId, recipientName}) {
