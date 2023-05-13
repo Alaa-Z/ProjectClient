@@ -1,26 +1,28 @@
+const endPoint = process.env.ENDPOINT_URL
+
 // REGISTER API
-const registerEndPoint = 'http://localhost:5000/api/user/register';
+const registerEndPoint = `${endPoint}/user/register`;
 // Log in API
-const loginEndPoint = 'http://localhost:5000/api/user/login';
+const loginEndPoint = `${endPoint}/user/login`;
 // ProfileEndPoint
-const profileEndPoint = 'http://localhost:5000/api/user/profile';
+const profileEndPoint = `${endPoint}/user/profile`;
 // Logout 
-const logoutEndPoint = 'http://localhost:5000/api/user/logout';
+const logoutEndPoint = `${endPoint}/user/logout`;
 
 // admin  
-const adminEndPoint = 'http://localhost:5000/api/admin';
+const adminEndPoint = `${endPoint}/admin`;
 
 
 // addBook
-const addBookEndPoint = 'http://localhost:5000/api/books/add';
+const addBookEndPoint = `${endPoint}/books/add`;
 // delete book
-const deleteBookEndPoint = 'http://localhost:5000/api/books/delete';
+const deleteBookEndPoint = `${endPoint}/books/delete`;
 // all books 
-const allBooksEndPoint = 'http://localhost:5000/api/books';
+const allBooksEndPoint = `${endPoint}/books`;
 // edit book status 
-const bookStatusEndPoint = 'http://localhost:5000/api/books/status';
+const bookStatusEndPoint = `${endPoint}/books/status`;
 
-const messagesEndPoint ='http://localhost:5000/api/user/messages'
+const messagesEndPoint =`${endPoint}/user/messages`;
 
 export {
     registerEndPoint,
