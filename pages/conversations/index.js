@@ -60,7 +60,7 @@ export default function allConversations() {
           <div>Loading</div>
         ) : (
           <div>
-            <h1 className={styles.h1}>Last conversations:</h1>
+            <h1 className={styles.h1}>Chats</h1>
             <ul className={styles.list}>
               {data.map((conversation) => {
                 // which name to show 

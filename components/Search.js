@@ -1,7 +1,10 @@
 import { useState, useRef } from 'react';
 import Modal from 'react-modal';
 import { allBooksEndPoint } from '../config/endpoints';
+
 import styles from '../styles/Search.module.scss';
+
+import SendMsgBtn from './SendMsgBtn';
 
 // Icons
 import { BiSearchAlt2 } from 'react-icons/bi';
@@ -68,11 +71,25 @@ export default function Search() {
             <ul className={styles.resultList}>
                 {books.map((book) => (
                 <li key={book._id} className={styles.listItem}> 
-                    <p className={styles.name}>{book.title}</p>
+                    {/* <p className={styles.name}>{book.title}</p>
                     <p> By: {book.author}</p>
                     <p>ISBN: {book.ISBN}</p>
                     <p><i>Owner: {book.user.name} </i></p>
                     <p> <GoLocation className={styles.locationIcon} />  {book.user.address} </p>
+                    <SendMsgBtn
+                      recipientId= {book.user._id}
+                      recipientName= {book.user.name}
+                    /> */}
+                    <p className={styles.name}> {book.title} by {book.author} </p>
+                    <p className={styles.palce}> <b> Status:</b>  <span className={book.available  ? "status1" : "status2"}>  {book.available ? ("Available"): ("Not available")}  </span></p>
+                    <div className={styles.ownerDiv} >
+                        <p className={styles.owner}><i>Added by: {book.user.name} </i></p>
+                        <p>  <GoLocation className={styles.locationIcon} />  {book.user.address} </p>
+                        <SendMsgBtn
+                          recipientId= {book.user._id}
+                          recipientName= {book.user.name}
+                        />
+                    </div>
                 </li>
                 ))}
             </ul>

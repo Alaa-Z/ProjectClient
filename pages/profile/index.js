@@ -70,17 +70,9 @@ function Profile() {
         <p>Address: {data.address}</p> */}
         <div className={styles.container}>
 
-          <div className={styles.item}>           
-            <Link href="/conversations"> Inbox </Link>
-          </div>
-          
-          {/* <div className={styles.item}>
-            <AddBook AddedBook={AddedBook} />
-          </div> */}
-
           <div className={styles.item}>
             <div className={styles.backgroundImg}> </div>
-            <div className={styles.iconImg}> </div>
+            {/* <div className={styles.iconImg}> </div> */}
             
             <div className={styles.itemDiv}>
 
@@ -88,7 +80,7 @@ function Profile() {
                 <AddBook AddedBook={AddedBook} />
               </div>
 
-              <h1>Your added books </h1>
+              <h1>Your books </h1>
               
               {data.books.length === 0 ? (
                 <p> You dit not add nay books yet</p>
@@ -100,37 +92,26 @@ function Profile() {
                   return <li key={book._id}>
                     <span> {book.title} By {book.author}</span> <br></br><br></br>
                     <div> 
-                      {book.available ? (
+                      <p> {book.available ? (
                         <span>Status: Available</span>
                       ) : (
                         <span>Status: Not available</span>
-                      )} 
+                      )}  </p>
                       <EditStatusBtn
                         AddedBook={AddedBook}  
                         id={book._id} 
                       />
-                      </div>
-                    <span> 
                       <DeleteBook
                       AddedBook={AddedBook}  
                       id={book._id} 
-                    />
-                    </span>
+                      />
+                    </div>
                   </li>;
                 })}
               </ol> }
               
             </div>
-
-            {/* <div className={styles.itemDiv} >
-              <h1 className="h1-heading"> Latest Added Books </h1>
-              <AllBooks />
-            </div> */}
-
           </div>
-
-          
-
         </div>
 
     </MainLayout>

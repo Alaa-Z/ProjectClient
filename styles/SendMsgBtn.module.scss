@@ -10,9 +10,11 @@
         font-size: 40px;
         background-color: transparent;
         border: none;
-        margin-left: 40px;
+        margin-left: 20px;
+        margin-bottom: 20px;
         margin-top: 30px;
         display: flex;
+        color: $blue;
     }
     div{
         margin-top: 50px;
@@ -36,8 +38,8 @@
     form{
         margin-top: 40px;
         margin: auto;
-        width: 80%;
-        width: 50%;
+        // width: 80%;
+        width: 90%;
         border-radius: 10px;
         border: 1px solid $black;
         background-color: $gray;

@@ -57,6 +57,13 @@ function Header() {
               ) 
               : null}
 
+              {authToken  ? (
+                <li>
+                  <Link href="/conversations">Inbox</Link>
+                  </li>
+              ) 
+              : null}
+
               {authToken ? (
                 <li>
                   <LogoutButton  />

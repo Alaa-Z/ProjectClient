@@ -37,10 +37,8 @@ export default function AllBooks() {
             <ul>
             {booksNumber.map((book) => (
                 <li key={book._id}>
-                    {/* <GiBookCover className={styles.bookIcon} /> */}
                     <p className={styles.name}> {book.title} by {book.author} </p>
-                    <p className={styles.palce}><b> Status:</b> {book.available ? ("Available"): ("Loaned")} </p>
-
+                    <p className={styles.palce}> <b> Status:</b>  <span className={book.available  ? "status1" : "status2"}>  {book.available ? ("Available"): ("Not available")}  </span></p>
                     <div className={styles.ownerDiv} >
                         <p className={styles.owner}><i>Added by: {book.user.name} </i></p>
                         <p>  <GoLocation className={styles.locationIcon} />  {book.user.address} </p>
@@ -48,10 +46,7 @@ export default function AllBooks() {
                             recipientId= {book.user._id}
                             recipientName= {book.user.name}
                         />
-
                     </div>
-                    {/* <p>  <GoLocation className={styles.locationIcon} />  {book.user.address} </p> */}
-                    {/* <p className={styles.palce}><b> Status:</b> {book.available ? ("Available"): ("Loaned")} </p> */}
                 </li>
             ))}
             </ul>

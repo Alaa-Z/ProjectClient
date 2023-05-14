@@ -61,6 +61,32 @@
             font-size: 20px;
             color: $blue;
         }
+        .ownerDiv{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            button{
+                border: none;
+                background: $blue;
+                cursor: pointer;
+                color: $white;
+                transition: all 0.3s ease;
+                border-radius: 6px;
+                border-style: none;
+                cursor: pointer;
+                font-size: $font-small;
+                text-align: center;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+                font-size: $font-small;
+                color: $black;
+                padding: 8px;
+            
+            }
+        }
+
        
       }
     }
@@ -68,3 +94,12 @@
     
   }
 
+@media (max-width:$breakpoint-tablet) {
+    .container{
+        form{
+            width: 80%;
+        }
+    }
+    
+}
+  

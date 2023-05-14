@@ -22,7 +22,6 @@ body{
 .deleteBtn{
     border: none;
     background: $red;
-    cursor: pointer;
     color: $white;
     font-size: $font-normal;
     transition: all 0.3s ease;
@@ -30,21 +29,23 @@ body{
     border-style: none;
     cursor: pointer;
     font-size: $font-small;
-    height: 30px;
+    // height: 30px;
     text-align: center;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
     // margin-left: 20px;
     // width: 20%;
-    width: 60px;
-    margin-left: 50px;
-    margin-top: 10px;
+    // width: 60px;
+    // margin-left: 50px;
+    // margin-top: 10px;
     // margin: auto;
     // margin-top: 20px;
     // display: block;
     // float: right;
     // margin-bottom:40px;
+    padding: 12px 30px;
+
 }
 .updateStatusBtn1{
     border: none;
@@ -55,18 +56,18 @@ body{
     transition: all 0.3s ease;
     border-radius: 6px;
     border-style: none;
-    cursor: pointer;
     font-size: $font-small;
-    height: 30px;
+    // height: 30px;
     text-align: center;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    margin-left: 20px;
-    width: 120px;
-    margin-left: 50px;
+    // margin-left: 20px;
+    // width: 120px;
+    // margin-left: 50px;
     display: inline-block;
-    margin-right: 10px; 
+    // margin-right: 10px; 
+    padding: 12px;
 
 }
 .updateStatusBtn2{
@@ -80,15 +81,42 @@ body{
     border-style: none;
     cursor: pointer;
     font-size: $font-small;
-    height: 30px;
+    // height: 30px;
     text-align: center;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    margin-left: 20px;
-    width: 120px;
-    margin-left: 75px;
+    // margin-left: 20px;
+    // width: 120px;
+    // margin-left: 75px;
     display: inline-block;
-    margin-right: 10px; 
-
+    // margin-right: 10px;
+    padding: 12px;
 }
+.status1{
+    color: $green;
+}
+.status2{
+    color: $orange;
+}
+
+@media (max-width:$breakpoint-tablet) {
+    .deleteBtn{
+        padding: 8px 16px;
+
+    }
+    .updateStatusBtn1{
+        padding: 8px;
+        // margin-bottom: 20px;
+        margin-right: 8px;
+        margin-left: 8px;
+
+    }
+    
+    .updateStatusBtn2{
+        padding: 8px;
+        margin-right: 10px;
+        margin-left: 8px;
+    }
+    
+    }

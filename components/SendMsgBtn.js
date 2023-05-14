@@ -82,17 +82,10 @@ export default function SendMsgBtn({recipientId, recipientName}) {
   return (
     <>
      <div>
-        <button onClick={() => setIsModalOpen(true)}> Connect </button>
+        <button onClick={() => setIsModalOpen(true)}> Send a message </button>
       </div>
-      {/* {!isLoggedIn && (
-      <Modal isOpen={true} onRequestClose={closeModal}  className={`${styles.modal}`}>
-        <button onClick={closeModal} className={`${styles.closeButton}`}>
-          <AiFillCloseCircle/>
-        </button>
-        <p>Please log in first to send a message.</p>
-      </Modal>
-      )} */}
 
+      {/* Change the modal content based on unser is logged in or not */}
       <Modal isOpen={isModalOpen} onRequestClose={closeModal}  className={`${styles.modal}`}>
         {!isLoggedIn ? (
           <div>

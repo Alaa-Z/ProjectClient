@@ -3,11 +3,15 @@ import { useState, useEffect } from 'react';
 import useSWR, { mutate } from 'swr';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 //Routes
 import { messagesEndPoint } from '../../config/endpoints';
 // Style
 import styles from '../../styles/Conversation.module.scss'
+import { BsFillSendFill } from 'react-icons/bs';
+import { MdArrowBackIos } from 'react-icons/md';
+
 
 import MainLayout from '@/components/MainLayout';
 
@@ -94,6 +98,11 @@ export default function conversationDetails() {
         ) : (
           <div>
             <div>
+              <div className={styles.backBtn}>
+                <Link  href='/conversations'>
+                <MdArrowBackIos/> Back 
+                </Link>
+              </div>
               <ul className={styles.list}>
                 {data.messages.map(msg => {
                   // Change the class name based on user
@@ -103,7 +112,7 @@ export default function conversationDetails() {
                     <li key={msg._id} className={styles.listItem}>
                         <div className={`${messageClass} ${styles.message}`}>
                           <div className={`${text}`}>
-                            <p><b>{msg.sender.name}</b></p>
+                            <p  className={styles.sender}> <b>{msg.sender.name}:</b></p><b></b>
                             <p>{msg.content}</p>
                             <p className={styles.date}>{new Date(msg.createdAt).toLocaleTimeString([], { hour: 'numeric', minute: 'numeric'})}</p>
                           </div> 
@@ -114,13 +123,15 @@ export default function conversationDetails() {
               </ul> 
             </div>
             <form onSubmit={handleSubmit} className={styles.form} >
-              <input
+              <textarea
                 type="text"
                 placeholder='Reply'
                 value={message}
                 onChange={(event) => setMessage(event.target.value)}
-              />
-              <button className={styles.btn} type="submit">Send</button>
+              >
+              </textarea>  
+              <br></br>
+              <button className={styles.btn} type="submit"> <BsFillSendFill/>Send</button>
 
               {errorMsg && <div>Error: {errorMsg}</div>}
               

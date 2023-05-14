@@ -4,10 +4,15 @@ import Cookies from 'js-cookie';
 
 import { addBookEndPoint } from '../config/endpoints';
 
+import Modal from 'react-modal';
+
+import Instruction from './Instruction';
 // Style 
 import styles from '../styles/AddBook.module.scss'
+import { AiOutlineQuestionCircle } from 'react-icons/ai';
+import { AiFillCloseCircle } from 'react-icons/ai';
 
-import { ImBook } from 'react-icons/im';
+Modal.setAppElement('body');
 
 
 function AddBook({AddedBook}) {
@@ -19,6 +24,10 @@ function AddBook({AddedBook}) {
    // error and success messages 
    const [error, setError] = useState('');
    const [success, setSuccess] = useState(false);
+
+   // to open info  modal 
+   const [isModalOpen, setIsModalOpen] = useState(false);
+
 
    // to handel the form submit 
    const handleSubmit = async (e) => {
@@ -58,9 +67,21 @@ function AddBook({AddedBook}) {
         } 
      }
    };
+
+   // close the modal
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
    return (
     <form onSubmit={handleSubmit} className={styles.form}>
-        <h1> Add a book </h1>
+        <h1> Add books to your profile <span className={styles.mark} onClick={() => setIsModalOpen(true)} > <AiOutlineQuestionCircle/> </span> </h1>
+        <Modal isOpen={isModalOpen} onRequestClose={closeModal}  className={`${styles.modal}`}>
+            <button onClick={closeModal} className={`${styles.closeButton}`}>
+            <AiFillCloseCircle/>
+            </button>
+            <Instruction />
+        </Modal>
         <label>
             Title<span>*</span>
         </label>

@@ -2,7 +2,7 @@
 
 .container{
     text-align: left;
-    margin-top: 10vh;
+    margin-top: 5vh;
     ul{
         display: flex;
         flex-direction: column;
@@ -16,7 +16,6 @@
                 align-items: center;
                 flex-wrap: wrap;
                 button{
-                    // margin: 2px;
                     border: none;
                     background: $blue;
                     cursor: pointer;
@@ -26,16 +25,13 @@
                     border-style: none;
                     cursor: pointer;
                     font-size: $font-small;
-                    height: 30px;
                     text-align: center;
                     user-select: none;
                     -webkit-user-select: none;
                     touch-action: manipulation;
-                    width: 60px;
-                    margin-left: 50px;
-                    // margin-top: 4px;
-                    // color: #E0E0E0;
+                    font-size: $font-small;
                     color: $black;
+                    padding: 8px;
                 
                 }
 
@@ -55,59 +51,26 @@
                 margin: 1px;
 
             }
-            .owner{
-                // margin-right: 100px;
-            }
-
-            .locationIcon{
-                font-size: 15px;
-                color: $blue;
-            }
-            .palce{
-                // float: right;
-                // margin-right: 100px;
-            }
            
         }
     }
    
 }
-// .containerinProfile{
-//     ul{
-//         display: block;
-//         li {
-//             padding: 10px;
-//             margin: 10px;
-//             list-style: none; 
-//             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-//         }
-//         p{
-//             margin: 10px;
-//         }
-//         .name{
-//             text-align: left;
-//             margin-bottom: 10px;
-//             font-weight: bold;
-//             font-size: $font-normal;
-//         }
-//         .bookIcon{
-//             font-size: 45px;
-//             margin-bottom: 10px;
-//         }
-//         .locationIcon{
-//             font-size: 20px;
-//             color: $blue;
-//         }
-//     }
 
-// }
 
-@media only screen and (max-width: $breakpoint-tablet) {
+@media only screen and (max-width: $breakpoint-mobile) {
     .container{
         ul{
             li{
                 width: 30vh;
+                .ownerDiv{
+                    button{
+                        margin-left: 0;
+                        margin-top: 10px;
+                    }
+                }
             }
+                
         }
     }
     

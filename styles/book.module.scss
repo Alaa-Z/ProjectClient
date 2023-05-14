@@ -1,0 +1,21 @@
+@import "Variables";
+
+.allBooks{
+    h1{
+        text-align: left;
+        padding-top: 5vh;
+        margin: auto;
+        width: 80%;
+        font-size:$font-large ;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width:$breakpoint-tablet) {
+    .allBooks{
+        h1{
+            font-size:$font-large;
+        }
+    }
+    
+}

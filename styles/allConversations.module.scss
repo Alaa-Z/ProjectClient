@@ -8,6 +8,11 @@
 .listItem{
     margin-bottom: 20px;
     list-style: none;
+    border: 1px solid $black;
+    padding: 10px;
+    border-color: #ccc;
+    background-color: $gray;
+    border-radius: 6px;
     .listItemDiv{
         display: flex;
         .iconImg{
@@ -18,15 +23,17 @@
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
-            border: 2px solid #ffffff;
-            border-radius: 2px;
+            // border: 2px solid #ffffff;
+            // border-radius: 6px;
+            margin-top: 10px;
             // margin: 0 auto;
         }
         .msg{
-            flex:3;
+            flex:4;
             border-bottom: 1px solid $gray;
             .msgSender{
                 font-size: 1.3em;
+                color: $blue;
             }
             .link{
                 color: $inherit;
