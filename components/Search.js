@@ -50,7 +50,7 @@ export default function Search() {
             className={styles.searchInput}
             type="text"
             name="searchWord"
-            placeholder="Search for a book"
+            placeholder="Search for books by title, author or ISBN"
             ref={searchInputRef}
             />
             <button type="submit" className={styles.searchButton}>

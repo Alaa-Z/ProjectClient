@@ -16,7 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout>
-        <h1 className="h1-heading"> Latest Added Books </h1>
+        <h1 className="h1-heading"> Recently Added Books </h1>
         <AllBooks />
       </MainLayout>
     </>

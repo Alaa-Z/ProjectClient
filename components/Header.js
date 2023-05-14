@@ -30,7 +30,8 @@ function Header() {
       <nav>
         <div className={styles.navContainer} >
             <div className={styles.logo}>
-              {/* <h1>logo</h1> */}
+              <h1>BookShare</h1>
+              <p>Book Borrowing Platform </p>
             </div>
             <div className={styles.menuIcon} onClick={handleShowNavbar}>
             <GiHamburgerMenu />

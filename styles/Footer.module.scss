@@ -1,6 +1,4 @@
-
 @import "Variables";
-
 .footer {
     background: $gray;
     height: auto;
@@ -17,6 +15,7 @@
         font-weight: 500;
         text-transform: capitalize;
         line-height: 3rem;
+        color: $blue-dark;
       }
       p {
         margin: 10px auto;
@@ -30,7 +29,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 1rem 0 3rem 0;
+        margin: 1rem 0 1rem 0;
         li {
           margin: 0 10px;
           a {
@@ -64,18 +63,25 @@
             font-size: $font-normal;
             text-decoration: none;
         }
+        :hover{
+          color: $blue;
+
+        }
       }  
       .menu {
         float: right;
         ul {
           display: flex;
           li {
-            padding-right: 10px;
+            padding-right: 30px;
             display: block;
+            :hover {
+              color: $blue;
+            }
             a {
               text-decoration: none;
               color: $inherit;
-              :hover {
+              a:hover {
                 color: $blue;
               }
             }
@@ -88,8 +94,8 @@
 @media (max-width:$breakpoint-tablet) {
     .menu{
         ul {
-            margin-top: 10px;
-            margin-bottom: 20px;
+            padding-top: 10px;
+            // padding-bottom: 20px;
             display: flex;
        
         }

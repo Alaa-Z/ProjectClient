@@ -14,8 +14,8 @@ export default function HomeHeader() {
     ? <div className={styles.containerHeader}>
             <div className={styles.container}>
                 <div className={styles.text}>
-                    <h2> Neque porro quisquam est qui dolorem ipsum porro quisquam est qui dolorem ipsum </h2>
-                    <p> Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur.</p>
+                    <h2> With BookShare you can easily share and borrow books with other users </h2>
+                    <p> Join us today and become part of our community!</p>
                     <Search />
                 </div>
             </div>

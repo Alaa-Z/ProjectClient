@@ -131,7 +131,7 @@ export default function conversationDetails() {
               >
               </textarea>  
               <br></br>
-              <button className={styles.btn} type="submit"> <BsFillSendFill/>Send</button>
+              <button className={styles.btn} type="submit"> <BsFillSendFill/> Send</button>
 
               {errorMsg && <div>Error: {errorMsg}</div>}
               
