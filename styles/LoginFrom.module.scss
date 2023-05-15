@@ -47,7 +47,7 @@
             height: 40px;
             background: $blue;
             cursor: pointer;
-            color: $white;
+            color: $black;
             font-size: $font-normal;
             border-radius: 4px;
             transition: all 0.3s ease;
@@ -62,7 +62,7 @@
         text-align: center;
         margin-top: 30px;
         a{
-            color: $blue;
+            color: $blue-dark;
         }
     }
     .error{

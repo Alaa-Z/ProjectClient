@@ -10,12 +10,12 @@ export default function Footer() {
     return (
       <footer className={styles.footer}>
         <div className={styles.content}>
-            <h3>BookShare</h3>
+            <p className={styles.heading}>BookShare</p>
             <p>A Community For Sharing Books</p>
             <ul className={styles.socials}>
-              <li><Link href="mailto:alza2100@student.miun.se"> <MdEmail className={styles.icon}/></Link></li>
-              <li><Link href="linkedin.com/in/zaza-alaa"> <AiFillLinkedin className={styles.icon}/></Link></li>
-              <li><Link href="https://github.com/Alaa-Z"> <AiFillGithub className={styles.icon}/></Link></li>
+              <li><Link href="mailto:alza2100@student.miun.se"> <span className={styles.srOnly}>send email to alza2100@student.miun.se </span> <MdEmail className={styles.icon}/></Link></li>
+              <li><Link href="linkedin.com/in/zaza-alaa"> <span className={styles.srOnly}>Visit linkedin website linkedin.com/in/zaza-alaa </span> <AiFillLinkedin className={styles.icon}/></Link></li>
+              <li><Link href="https://github.com/Alaa-Z"> <span className={styles.srOnly}>Visit github website https://github.com/Alaa-Z </span>  <AiFillGithub className={styles.icon}/></Link></li>
             </ul>
         </div>
         <div className={styles.footerBottom}>

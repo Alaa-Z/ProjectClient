@@ -99,11 +99,12 @@ export default function SendMsgBtn({recipientId, recipientName}) {
         : 
         <div>
         <button onClick={closeModal} className={`${styles.closeButton}`}>
+          <span>close the button</span>
           <AiFillCloseCircle/>
         </button>
         <form onSubmit={handleSubmit}>
           <p className={`${styles.to}`}>To: {recipientName} </p>
-          <label htmlFor="content" className={`${styles.label}`} >Message:</label><br></br>
+          <label for="content" className={`${styles.label}`} >Message:</label><br></br>
           <textarea
             type="text"
             id="content"

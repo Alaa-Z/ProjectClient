@@ -46,7 +46,9 @@ export default function Search() {
 
 
         <form onSubmit={handleSearch}>
+          <label  for="search"> Search</label>
             <input
+            id="search"
             className={styles.searchInput}
             type="text"
             name="searchWord"
@@ -54,6 +56,7 @@ export default function Search() {
             ref={searchInputRef}
             />
             <button type="submit" className={styles.searchButton}>
+            <span className={styles.srOnly}>Search button</span> 
             <BiSearchAlt2 />
             </button>
         </form>
@@ -63,7 +66,9 @@ export default function Search() {
             contentLabel="Results"
             className={`${styles.modal}`}
             overlayClassName={styles.overlay}>
+
             <button onClick={closeModal} className={styles.closeButton}>
+            <span>close the button</span>
             <AiFillCloseCircle/>
             </button>
         
@@ -71,15 +76,6 @@ export default function Search() {
             <ul className={styles.resultList}>
                 {books.map((book) => (
                 <li key={book._id} className={styles.listItem}> 
-                    {/* <p className={styles.name}>{book.title}</p>
-                    <p> By: {book.author}</p>
-                    <p>ISBN: {book.ISBN}</p>
-                    <p><i>Owner: {book.user.name} </i></p>
-                    <p> <GoLocation className={styles.locationIcon} />  {book.user.address} </p>
-                    <SendMsgBtn
-                      recipientId= {book.user._id}
-                      recipientName= {book.user.name}
-                    /> */}
                     <p className={styles.name}> {book.title} by {book.author} </p>
                     <p className={styles.palce}> <b> Status:</b>  <span className={book.available  ? "status1" : "status2"}>  {book.available ? ("Available"): ("Not available")}  </span></p>
                     <div className={styles.ownerDiv} >

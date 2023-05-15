@@ -52,6 +52,7 @@
             background: $blue;
             cursor: pointer;
             color: $white;
+            color: $black;
             font-size: $font-normal;
             border-radius: 4px;
             transition: all 0.3s ease;
@@ -66,7 +67,7 @@
         text-align: center;
         margin-top: 30px;
         a{
-            color: $blue;
+            color: $blue-dark;
             text-decoration: none;
         }
     }
@@ -80,7 +81,10 @@
         // height: 40px;
         padding-top: 10px;
         border-radius: 6px;
+        padding: 10px;
+
     }
+
     .error{
         color: white;
         margin-top: 20px;
@@ -88,9 +92,10 @@
         background-color: $red;
         width: 90%;
         text-align: center;
-        height: 50px;
+        // height: 50px;
         padding-top: 10px;
         border-radius: 6px;
+        padding: 10px;
     }
 }
 @media (max-width:$breakpoint-tablet) {

@@ -28,7 +28,10 @@ function DeleteBook({id, AddedBook}) {
       };
     
       return (
-        <button className="deleteBtn" onClick={deleteBook}><MdDelete/></button>
+        <button className="deleteBtn" onClick={deleteBook}> 
+          <span className="srOnly">Delete button</span> 
+          <MdDelete/>
+        </button>
       );
     }
     

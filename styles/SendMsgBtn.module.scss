@@ -14,7 +14,18 @@
         margin-bottom: 20px;
         margin-top: 30px;
         display: flex;
-        color: $blue;
+        color: $black;
+        span{
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+            color: $black;
+        }
     }
     div{
         margin-top: 50px;
@@ -58,10 +69,10 @@
         .sendButton{
             background-color: transparent;
             margin-top: 20px;
-            color: $blue;
+            color: $blue-dark;
             width: 80px;
             height: 40px;
-            border: 2px solid $blue;
+            border: 2px solid $blue-dark;
             border-radius: 10px;
         }
         .success{

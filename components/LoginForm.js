@@ -60,25 +60,27 @@ function LoginForm() {
   return (
     <div className={styles.container}>
       <h2> Login To Continue</h2>
-      <form className={styles.form} onSubmit={handleSubmit} >
+      <form className={styles.form} onSubmit={handleSubmit}  >
         <div className={styles.inputField}> 
-          <label className={styles.label}>
+          <label className={styles.label} for='email'>
             Email:
           </label>
           <br></br>
           {email ? null : <MdEmail className={styles.icon}  />}
           <input type="email" placeholder="Enter your email"
+          id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className={styles.inputField}> 
-          <label className={styles.label}>
+          <label  className={styles.label} for="pass" >
             Password:
           </label>
           <br></br>
           {password ? null : <RiLockPasswordFill className={styles.icon}  />}
           <input type="password"
+            id="pass"
             value={password} 
             placeholder="Enter your password"
             onChange={(e) => setPassword(e.target.value)} />

@@ -123,7 +123,9 @@ export default function conversationDetails() {
               </ul> 
             </div>
             <form onSubmit={handleSubmit} className={styles.form} >
+              <label for="msg" className={styles.label} > message </label>
               <textarea
+                id="msg"
                 type="text"
                 placeholder='Reply'
                 value={message}

@@ -91,44 +91,47 @@ function RegisterForm() {
       <h2> Create An Account</h2>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.inputField}> 
-            <label className={styles.label}>
+            <label className={styles.label} for="name">
               Name:
             </label>
             <br></br>
             {name ? null : <MdDriveFileRenameOutline className={styles.icon}  />}
             <input type="text" placeholder="Enter your name"
+            id="name"
             value={name}            
             onChange={(e) => setName(e.target.value)}
             />
           </div>
 
           <div className={styles.inputField}> 
-            <label className={styles.label}>
+            <label className={styles.label} for="email">
               Email:
             </label>
             <br></br>
             {email ? null : <MdEmail className={styles.icon}  />}
             <input type="email" placeholder="Enter your email"
+            id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <br></br>
           <div className={styles.inputField}> 
-            <label className={styles.label}>
+            <label className={styles.label} for="pass">
               Password:
             </label>
             <br></br>
             {password ? null : <RiLockPasswordFill className={styles.icon}  />}
             {password ?  <span> Password length must be at least 6 characters long </span>  : null}
             <input type="password"
+              id="pass"
               value={password} 
               placeholder="Enter your password"
               onChange={(e) => setPassword(e.target.value)} />
           </div>
           <br></br>
           <div className={styles.inputField}> 
-            <label className={styles.label}>
+            <label className={styles.label} for='location'>
             Address:
             </label>
             <br></br>
@@ -144,8 +147,10 @@ function RegisterForm() {
             >
             {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
             <div>
-              <input {...getInputProps({ placeholder: "Type address" })} 
-                style={{ paddingLeft: '30px' }}/>
+              <input {...getInputProps({ placeholder: "Type a city" })} 
+                style={{ paddingLeft: '30px' }}
+                id="location"
+              />
               <div>
                 {loading ? <div>...loading</div> : null}
 

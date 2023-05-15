@@ -82,20 +82,20 @@ function AddBook({AddedBook}) {
             </button>
             <Instruction />
         </Modal>
-        <label>
+        <label for="title">
             Title<span>*</span>
         </label>
-        <input className={styles.input} type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input id="title" className={styles.input} type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
         <br></br>
-        <label>
+        <label for="author">
             Author<span>*</span>
         </label>
-        <input className={styles.input} type="text" value={author} onChange={(e) => setAuthor(e.target.value)} />
+        <input id="author" className={styles.input} type="text" value={author} onChange={(e) => setAuthor(e.target.value)} />
         <br></br>
-        <label>
+        <label for="isbn">
             ISBN<span>*</span>
         </label>
-        <input className={styles.input} type="text" value={ISBN} onChange={(e) => setISBN(e.target.value)} />
+        <input id="isbn" className={styles.input} type="text" value={ISBN} onChange={(e) => setISBN(e.target.value)} />
         <br></br>
         <button className={styles.btn} type="submit"> + </button>
         {/* if the messages exist show them */}
