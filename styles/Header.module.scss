@@ -1,7 +1,7 @@
 @import "Variables";
 
 .header{
-    height: 12vh;
+    height: 14vh;
     background-color: $gray; 
     nav{
         // position: relative;
@@ -20,10 +20,13 @@
                     text-align: center;
                 }
                 p{
-                    font-size: $font-small;
+                    font-size: 12px;
+                    margin-top: -14px;
+                    color: #742C35;
                 }
                 img{
-                    width: 20px;
+                    width: 120px;
+                    margin-top: -10px;
                 }
         
             }
@@ -31,6 +34,7 @@
                 display: flex;
                 justify-content: space-between;
                 list-style-type: none;
+                margin-top: -10px;
                 li{
                     margin-left: 30px;
                     a{
@@ -95,4 +99,20 @@
     .menuIcon {
       display: none;
     }
+}
+
+@media only screen and (min-width: $breakpoint-mobile) {
+    .header{
+        nav{
+            .navContainer {
+                .logo{
+                    img{
+                        width: 100px;
+                    }
+                }
+            }
+        
+        }
+    }
+    
 }

@@ -89,6 +89,9 @@ body{
     border: 0;
 }
 @media (max-width:$breakpoint-tablet) {
+    body{
+        font-size: $font-small;
+    }
     .deleteBtn{
         padding: 8px 16px;
 
