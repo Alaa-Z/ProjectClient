@@ -52,15 +52,7 @@ function RegisterForm() {
   // to handel the form submit 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!address){
-      setError("Please Enter your address");
-      return;
-    }
-    // Check if terms are accepted
-    if (!acceptedTerms) {
-      setError('Please accept the terms and conditions.');
-      return;
-    }
+    
     try {
       const response = await axios.post(registerEndPoint, {
         name,
@@ -82,9 +74,16 @@ function RegisterForm() {
       setError('');
     } catch (error) {
       if(error){
-          console.log(error);
+          // console.log(error);
           setSuccess(false);
+          // console.log(error);
+          if(error.response.data.message){
+            // console.log(error.response.data.message);
+            setError("Please Select a City");
+            return;
+          }
           if(error.response.data){
+            console.log(error.response.data);
             setError(error.response.data);
           }
           // show error message only for 3 seconds
@@ -156,7 +155,7 @@ function RegisterForm() {
             >
             {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
             <div>
-              <input {...getInputProps({ placeholder: "Type a city" })} 
+              <input {...getInputProps({ placeholder: "Please Type a city name" })} 
                 style={{ paddingLeft: '30px' }}
                 id="location"
               />
