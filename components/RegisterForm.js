@@ -74,9 +74,9 @@ function RegisterForm() {
       setError('');
     } catch (error) {
       if(error){
-          // console.log(error);
+          console.log(error);
           setSuccess(false);
-          // console.log(error);
+          console.log(error);
           if(error.response.data.message){
             // console.log(error.response.data.message);
             setError("Please Select a City");
@@ -155,7 +155,7 @@ function RegisterForm() {
             >
             {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
             <div>
-              <input {...getInputProps({ placeholder: "Please Type a city name" })} 
+              <input {...getInputProps({ placeholder: "Please type a city name" })} 
                 style={{ paddingLeft: '30px' }}
                 id="location"
               />
@@ -190,8 +190,21 @@ function RegisterForm() {
               <span className={styles.checkboxIcon}>
                 {acceptedTerms && <FiCheck />}
               </span>
-              I understand and agree with the terms & conditions and Privacy Policy.<b></b>
-              Registration confermation will be emailed to you
+              <p>
+              I understand and agree with the{' '}
+              <Link href="/terms" legacyBehavior>
+                <a target="_blank" rel="noopener noreferrer">
+                terms & conditions
+                </a>
+              </Link> and{' '}
+              <Link href="/privacy" legacyBehavior>
+                <a target="_blank" rel="noopener noreferrer">
+                Privacy Policy
+                </a>
+              </Link>.
+              <br />
+              Registration confirmation will be emailed to you.
+              </p>
             </label>
           </div>
 

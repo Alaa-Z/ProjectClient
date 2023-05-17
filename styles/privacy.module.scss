@@ -1,0 +1,20 @@
+@import "Variables";
+
+.container {
+    @include theContainer;
+    .backBtn{
+        @include back
+    }
+    p:first-child {
+        margin-top: 40px;
+    }
+    max-width: $breakpoint-large;
+    margin: auto;
+    ul{
+        @include ul;
+        li{
+        margin-top: 20px
+        }
+    }
+   
+}

@@ -1,5 +1,6 @@
 @import "Variables";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -88,6 +89,19 @@ body{
     clip: rect(0,0,0,0);
     border: 0;
 }
+
+
+@mixin theContainer {
+    padding-left: 40px;
+    padding-top: 40px;
+    font-size: 16px;
+    padding: 20px;
+    line-height: 1.5;
+    min-height: 80vh;
+
+}
+
+
 @media (max-width:$breakpoint-tablet) {
     body{
         font-size: $font-small;
