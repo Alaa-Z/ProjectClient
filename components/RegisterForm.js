@@ -13,6 +13,7 @@ import { MdEmail } from 'react-icons/md';
 import { RiLockPasswordFill} from 'react-icons/ri';
 import {MdDriveFileRenameOutline} from 'react-icons/md';
 import {GoLocation} from 'react-icons/go';
+import { FiCheck } from 'react-icons/fi';
 
 import PlacesAutocomplete, {
   geocodeByAddress,
@@ -24,6 +25,8 @@ function RegisterForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
+
   // get address from autocomplete
   const [address, setAddress] = useState('');
   const [coordinates, setCoordinates] = React.useState({
@@ -50,7 +53,12 @@ function RegisterForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(!address){
-      setError("Something went wrong! Please refresh the page and try again after a while");
+      setError("Please Enter your address");
+      return;
+    }
+    // Check if terms are accepted
+    if (!acceptedTerms) {
+      setError('Please accept the terms and conditions.');
       return;
     }
     try {
@@ -60,7 +68,8 @@ function RegisterForm() {
         password,
         address,
         latitude: coordinates.lat, 
-        longitude: coordinates.lng
+        longitude: coordinates.lng,
+        acceptedTerms
       });
       console.log(response)
       //if registration is successful
@@ -158,7 +167,6 @@ function RegisterForm() {
                   const style = {
                     // backgroundColor: suggestion.active ? "#41b6e6" : "#fff"
                   };
-
                   return (
                     <div {...getSuggestionItemProps(suggestion, { style })}>
                       {suggestion.description}
@@ -169,6 +177,23 @@ function RegisterForm() {
             </div>
             )}
             </PlacesAutocomplete>
+          </div>
+
+          <div className={styles.inputField}>
+            <label className={styles.label} for="termsCheckbox">
+              <input
+                type="checkbox"
+                id="termsCheckbox"
+                checked={acceptedTerms}
+                className={styles.checkbox}
+                onChange={(e) => setAcceptedTerms(e.target.checked)}
+              />
+              <span className={styles.checkboxIcon}>
+                {acceptedTerms && <FiCheck />}
+              </span>
+              I understand and agree with the terms & conditions and Privacy Policy.<b></b>
+              Registration confermation will be emailed to you
+            </label>
           </div>
 
           <button type="submit">Register</button>
