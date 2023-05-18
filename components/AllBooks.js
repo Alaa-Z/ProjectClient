@@ -2,17 +2,21 @@ import useSWR from 'swr';
 import { allBooksEndPoint } from '../config/endpoints';
 // import styles 
 import styles from '../styles/AllBooks.module.scss'
-import { GiBookCover } from 'react-icons/gi';
-
 import {GoLocation} from 'react-icons/go';
-
 import { useRouter } from 'next/router';
+
+import jwt_decode from "jwt-decode";
+import Cookies from 'js-cookie';
+
 import SendMsgBtn from './SendMsgBtn';
+import { useState, useEffect } from 'react';
 
 
 export default function AllBooks() {
 
-    
+    const [authToken, setAuthToken] = useState('');
+    const[loggedInUserID, setLoggedInUserID] = useState(null)
+
     const router = useRouter();
     // Define which page is rendering 
     const isHomepage  = router.pathname === '/';
@@ -26,11 +30,25 @@ export default function AllBooks() {
         return json;
     });
 
+    useEffect(() => {
+        setAuthToken(Cookies.get('auth-token'));
+        if(Cookies.get('auth-token')){
+            const decoded= jwt_decode(Cookies.get('auth-token'));
+            setLoggedInUserID(decoded._id)
+            console.log(decoded)
+        }
+    }, []);
+
+
     if (error) return <div>Error loading books.</div>;
     if (!data) return <div>Loading books...</div>;
     
     // Render 4 books in the home page
     const booksNumber = isHomepage ? data.slice(0, 4) : data;
+
+    
+
+
 
     return (
         <div className={styles.container}>
@@ -42,10 +60,12 @@ export default function AllBooks() {
                     <div className={styles.ownerDiv} >
                         <p className={styles.owner}><i>Added by: {book.user.name} </i></p>
                         <p>  <GoLocation className={styles.locationIcon} />  {book.user.address} </p>
-                        <SendMsgBtn
-                            recipientId= {book.user._id}
-                            recipientName= {book.user.name}
-                        />
+                        {book.user._id !== loggedInUserID && (
+                            <SendMsgBtn
+                            recipientId={book.user._id}
+                            recipientName={book.user.name}
+                            />
+                        )}
                     </div>
                 </li>
             ))}

@@ -1,0 +1,64 @@
+@import "Variables";
+
+.container{
+    padding-left: 40px;
+    padding-top: 40px;
+    font-size: 16px;
+    padding: 20px;
+    line-height: 1.5;
+    .backBtn{
+        @include back
+    }
+    .form{
+        margin-top: 40px;
+        // margin: auto;
+        // width: 80%;
+        width: 90%;
+        border-radius: 10px;
+        border: 1px solid $black;
+        background-color: $gray;
+        padding: 10px;
+    }
+    textarea{
+        width: 100%;
+        height:80px;
+        border-radius: 10px;
+        margin-top: 20px;
+        padding: 6px;
+    }
+    button{
+        background-color: transparent;
+        margin-top: 20px;
+        color: $blue-dark;
+        width: 80px;
+        height: 40px;
+        border: 2px solid $blue-dark;
+        border-radius: 10px;
+    }
+    .success{
+    color: white;
+    margin-bottom:20px;
+    background-color: $green;
+    width: 90%;
+    text-align: center;
+    height: auto;
+    border-radius: 6px;
+    padding: 8px;
+    margin: auto;
+    margin-top: 20px;
+    }
+    .error{
+        color: white;
+        margin-bottom:20px;
+        background-color: $red;
+        width: 90%;
+        text-align: center;
+        height: auto;
+        border-radius: 6px;
+        padding: 8px;
+        margin: auto;
+        margin-top: 20px;
+
+    }
+
+}
