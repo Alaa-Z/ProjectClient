@@ -29,9 +29,9 @@ export default function Footer() {
           <p className={styles.heading}>BookShare</p>
           <p>A Community For Sharing Books</p>
           <ul className={styles.socials}>
-            <li><Link href="mailto:alza2100@student.miun.se"> <span className={styles.srOnly}>send email to alza2100@student.miun.se </span> <MdEmail className={styles.icon}/></Link></li>
-            <li><Link href="linkedin.com/in/zaza-alaa"> <span className={styles.srOnly}>Visit linkedin website linkedin.com/in/zaza-alaa </span> <AiFillLinkedin className={styles.icon}/></Link></li>
-            <li><Link href="https://github.com/Alaa-Z"> <span className={styles.srOnly}>Visit github website https://github.com/Alaa-Z </span>  <AiFillGithub className={styles.icon}/></Link></li>
+            <li><a href="mailto:alza2100@student.miun.se" target='_blank' > <span className={styles.srOnly}>send email to alza2100@student.miun.se </span> <MdEmail className={styles.icon}/></a></li>
+            <li><a href="linkedin.com/in/zaza-alaa" target='_blank' > <span className={styles.srOnly}>Visit linkedin website linkedin.com/in/zaza-alaa </span> <AiFillLinkedin className={styles.icon}/></a></li>
+            <li><a href="https://github.com/Alaa-Z" target='_blank' > <span className={styles.srOnly}>Visit github website https://github.com/Alaa-Z </span>  <AiFillGithub className={styles.icon}/></a></li>
           </ul>
       </div>
       <div className={styles.footerBottom}>
