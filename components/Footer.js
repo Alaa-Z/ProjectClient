@@ -35,7 +35,7 @@ export default function Footer() {
           </ul>
       </div>
       <div className={styles.footerBottom}>
-          <p>copyright &copy; <Link href="https://alaazaza.com/">Alaa Zaza</Link>  </p>
+          <p>copyright &copy; <a href="https://alaazaza.com/" target='_blank'>Alaa Zaza</a>  </p>
             <div className={styles.menu}>
               <ul>
                 <li><Link href="/">Home</Link></li>
