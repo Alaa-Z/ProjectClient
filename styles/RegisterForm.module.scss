@@ -4,7 +4,7 @@
     margin: auto;
     width: 40%;
     max-width: $breakpoint-tablet;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 6px;
     background-color: $gray;
     min-height: 55vh;
@@ -47,6 +47,10 @@
                 width: 10%;
                 margin-left: -5px;
             }
+            a{
+                color: $blue-dark;
+                text-decoration: none;
+            }
         }
         .inputField:first-child {
             margin-bottom: 1.5rem;
@@ -69,7 +73,7 @@
         ::placeholder {
             color: rgba(0, 0, 0, 0.5);
             padding-left: 50px;
-        }    
+        }   
     }
     .signup{
         text-align: center;

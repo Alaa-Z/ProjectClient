@@ -90,7 +90,7 @@ function LoginForm() {
       {error && <p className={styles.error}>{error}</p>}
     </form>
     <div className={styles.signup}>
-      Create an account <Link href="/register"> SignUp Now</Link>
+      Or create an account <Link href="/register"> Sign up Now</Link>
     </div>
   </div>
    
