@@ -22,7 +22,7 @@ export default function Terms () {
                 <p> Registration Terms:</p>
                 <ul>
                     <li>
-                    <b>Sharing: </b>By registering on this platform, you agree to participate in a community where everybody share their books an knowledg. Remeber that it's a way to help each other and reduce costs
+                    <b>Sharing: </b>By registering on this platform, you agree to participate in a community where everybody shares their books and knowledg. Remember that it's a way to help each other and reduce costs
                     </li>
                     <li>
                     <b> Respect: </b>As a member, you commit to treating others with respect and kindness. This includes being considerate when borrowing materials and returning them on time.
