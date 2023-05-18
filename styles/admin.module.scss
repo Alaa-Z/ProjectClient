@@ -1,0 +1,27 @@
+@import "Variables";
+
+.container{
+    text-align: left;
+    margin-top: 5vh;
+    .tableContainer{
+        overflow-x:auto;
+        table{
+            border-collapse: collapse;
+            width: 100%;
+            td, th {
+                border: 1px solid $gray;
+                text-align: left;
+                padding: 8px;
+                vertical-align: middle;
+            }
+            ol{
+                padding-left: 20px;
+            }
+            tr:nth-child(even) {
+                background-color: $light-blue;
+            }
+    
+        }
+    }
+    
+}

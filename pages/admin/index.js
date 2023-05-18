@@ -7,6 +7,9 @@ import { useRouter } from 'next/router';
 import { adminEndPoint } from '../../config/endpoints';
 // Components
 import LogoutButton from '../../components/LogoutButton';
+import MainLayout from '@/components/MainLayout';
+// style
+import styles from '../../styles/admin.module.scss'
 
 function admin() {
   const router = useRouter();
@@ -35,7 +38,7 @@ function admin() {
     }
     // covert to a JSON object.
     const json = await res.json();
-    // console.log(json)
+    console.log(json)
 
     return json;
   });
@@ -53,23 +56,48 @@ function admin() {
       <Head>
         <title>Admin</title>
       </Head>
-      {/* render admin info */}
-      <h1>This is the admin: {data.admin.name} page</h1>
-      <p>Email: {data.admin.email}</p>
-      <h2>List of Users:</h2>
-      <ul>
-        {data.users.map((user) => {
-          // render all users but not the admin
-          if (user._id !== data.admin._id) {
-            return <li key={user._id}>{user.name} ({user.email})</li>;
-          } else {
-            return null; 
-          }
-        })}
-      </ul>
-      <LogoutButton />
+      <MainLayout>
+        {/* render admin info */}
+        <h1>Admin {data.admin.name} page</h1>
+        <h2>List of All Users:</h2>
+        <div className={styles.container}>
+          <div className={styles.tableContainer}>
+            <table>
+              <tbody>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Location</th>
+                  <th>Books</th>
+                </tr>
+                {data.users.map((user) => {
+                  return user._id !== data.admin._id ? (
+                    <tr key={user._id} >
+                      <td>{user.name}</td>
+                      <td>{user.email}</td>
+                      <td>{user.address}</td>
+                      <td>
+                        <ol>
+                          {user.books.map((book) => (
+                            <li key={book.id}>{book.title}</li>
+                          ))}
+                        </ol>
+                      </td>
+                    </tr>
+                  ) : null;
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </MainLayout>
     </div>
   );
-}
+}  
+
+
+
+        
+
 
 export default admin;

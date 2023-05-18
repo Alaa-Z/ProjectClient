@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react';
+import jwt_decode from "jwt-decode";
+
 // Style 
 import styles from '../styles/Header.module.scss'
 // React icons 
@@ -14,6 +16,7 @@ function Header() {
   // for  navbar in small screens 
   const [showNav, setShowNav] = useState(false)
   const [authToken, setAuthToken] = useState('');
+  const [decoded, setDecoded] = useState(false);
 
   // toggle the value of showNav
   const handleShowNavbar = () => {
@@ -22,6 +25,8 @@ function Header() {
 
   useEffect(() => {
     setAuthToken(Cookies.get('auth-token'));
+    var decodedAuth = jwt_decode(Cookies.get('auth-token'));
+    setDecoded(decodedAuth);
   }, []);
 
   return (
@@ -44,6 +49,13 @@ function Header() {
                   Home
                 </Link>
               </li>
+
+              {decoded.isAdmin ? (
+                <li>
+                  <Link href="/admin">Admin</Link>
+                </li>
+              ) 
+              : null}
 
               <li>
                 <Link href="/book">

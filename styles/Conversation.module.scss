@@ -33,18 +33,15 @@
           
             .textright{
                 justify-content: flex-end;
-                background-color: #DCF8C6;
                 width: 60%;
                 text-align: left;
                 border-radius: 6px;
                 border: 1px solid $black;
                 padding: 10px;
                 border-color: #ccc;
-                // background-color: #DCF8C6;
-                background-color:  #ebf2f9;
+                background-color:  $light-blue;
                 border-color: $gray;
                 .sender{
-                    // text-shadow: 0.5px 0.5px $blue;
                     color: $blue-dark;
                     padding-bottom: 10px;
                 }
@@ -64,7 +61,6 @@
                 background-color: #f1f1f1;
                 border: 2px solid #dedede;
                 .sender{
-                    // text-shadow: 0.5px 0.5px $blue;
                     color: $blue-dark;
                     padding-bottom: 10px;
                 }
