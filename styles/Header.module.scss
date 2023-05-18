@@ -54,6 +54,9 @@
 
 // Styles for tablet and mobile screens 
 @media (max-width: $breakpoint-tablet) {
+    .header{
+        height: 100px;
+    }
     .menuIcon {
         display: block;
         cursor: pointer;

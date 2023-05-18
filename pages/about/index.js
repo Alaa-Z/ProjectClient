@@ -11,7 +11,7 @@ export default function about() {
             <title>Books</title>
         </Head>
         <MainLayout>
-            <section  className={styles.about}>
+            <section  className={styles.container}>
                 <h1> About BookShare</h1>
                 <p> BookShare platform is designed to help users easily share and borrow books from each other.
                 We understand that accessing course materials can be expensive and challenging, which is why we have created a user-friendly solution that enables students to connect and support one another</p>
