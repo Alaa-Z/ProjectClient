@@ -21,7 +21,7 @@ export default function conversationDetails() {
   const { conversationId } = router.query;
 
   const [token, setToken] = useState(null);
-  const[loggedInUser, setLoggedInUser]= useState(null);
+  const [loggedInUser, setLoggedInUser]= useState(null);
   const [message, setMessage] = useState('');
   // error messages 
   const [errorMsg, setErrorMsg] = useState('');
@@ -51,20 +51,23 @@ export default function conversationDetails() {
     setMessage('')
     //covert to a JSON object.
     const json = await res.json();
-    // console.log(json)
+    console.log("respnse is" + json)
     return json;
   });
 
-  
-  // const recipientId = data ? data.users[0]._id : null;
-  const recipientId = data ? data.users.find(user => user._id !== loggedInUser)._id : null;
+  // console.log(data.users)
 
-  console.log(recipientId)
+  // const recipientId = data ? data.users[0]._id : null;
+  const recipientId = data ? data.users.find(user => user._id !== loggedInUser._id): null;
+
+  // data? console.log(data): null;
   
+  console.log(recipientId)
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`${messagesEndPoint}/${recipientId}`, {
+      const response = await fetch(`${messagesEndPoint}/${recipientId._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -79,8 +82,8 @@ export default function conversationDetails() {
       }
      
     } catch (error) {
-      console.log(error);
-      console.log(error);
+      // console.log(error);
+      // console.log(error);
       setErrorMsg('Please enter your message');
             // show error message only for 3 seconds
             setTimeout(() => {
@@ -112,8 +115,8 @@ export default function conversationDetails() {
               <ul className={styles.list}>
                 {data.messages.map(msg => {
                   // Change the class name based on user
-                  const messageClass = msg.sender._id === recipientId ? styles.left : styles.right;
-                  const text = msg.sender._id === recipientId ? styles.textleft : styles.textright;
+                  const messageClass = msg.sender._id === recipientId._id ?  styles.right :styles.left ; 
+                  const text = msg.sender._id === recipientId._id ? styles.textright :  styles.textleft;
                   return (
                     <li key={msg._id} className={styles.listItem}>
                         <div className={`${messageClass} ${styles.message}`}>
@@ -155,3 +158,6 @@ export default function conversationDetails() {
 }
 
 
+
+// 645f9f86040a4695dd28deca
+// 64667be36d8266954cf3c1a6
