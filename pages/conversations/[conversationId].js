@@ -4,6 +4,7 @@ import useSWR, { mutate } from 'swr';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import jwt_decode from "jwt-decode";
 
 //Routes
 import { messagesEndPoint } from '../../config/endpoints';
@@ -20,6 +21,7 @@ export default function conversationDetails() {
   const { conversationId } = router.query;
 
   const [token, setToken] = useState(null);
+  const[loggedInUser, setLoggedInUser]= useState(null);
   const [message, setMessage] = useState('');
   // error messages 
   const [errorMsg, setErrorMsg] = useState('');
@@ -30,6 +32,7 @@ export default function conversationDetails() {
       router.push('/login');
     } else {
       setToken(authToken);
+      setLoggedInUser(jwt_decode(authToken))
     }
   }, []);
 
@@ -53,8 +56,11 @@ export default function conversationDetails() {
   });
 
   
-  const recipientId = data ? data.users[0]._id : null;
+  // const recipientId = data ? data.users[0]._id : null;
+  const recipientId = data ? data.users.find(user => user._id !== loggedInUser)._id : null;
 
+  console.log(recipientId)
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
