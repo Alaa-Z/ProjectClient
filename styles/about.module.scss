@@ -2,11 +2,6 @@
 
 .container {
     @include theContainer;
-    // // background-color: #f8f8f8;
-    // padding: 50px;
-    // text-align: left;
-    // // background-color: #EAF5E3;
-    // ;
     h1 {
         font-size: $font-large;
         margin-bottom: 30px;
@@ -23,9 +18,9 @@
         color: $blue-dark;
     }
     .inst{
-        margin-bottom: 15px;
-
-        // margin-left: -20px;
+        padding-bottom: 10px;
+        margin-top: -10px;
+        margin-left: -20px;
         // margin-top: -20px;
         // margin-bottom: -80px;
     }

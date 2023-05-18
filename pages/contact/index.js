@@ -32,7 +32,7 @@ export default function contact () {
     const [er, setEr] = useState('');
     const [success, setSuccess] = useState(false);
 
-    // use it to set setIsLoggedIn to true when user is loggedin
+    // use it to setIsLoggedIn to true when user is loggedin
     useEffect(() => {
         if(Cookies.get('auth-token')){
         setIsLoggedIn(true);

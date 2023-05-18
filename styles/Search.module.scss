@@ -18,14 +18,21 @@
         padding: 12px;
         flex:4;
         border:none;
+        border-radius: 4px 0 0 4px;
+        border-color: transparent ;
+        
     }
     .searchButton {
-        border:1px solid $gray;
+        // border:1px solid $gray;
         background:$blue;
         color:white;
         color: $black;
         flex:1;
         font-size: $font-normal;
+        // border-radius: 4px;
+        border-radius: 0 4px 4px 0;
+
+        border: none;
         .srOnly{
             position: absolute;
             width: 1px;
