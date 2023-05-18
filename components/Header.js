@@ -25,8 +25,10 @@ function Header() {
 
   useEffect(() => {
     setAuthToken(Cookies.get('auth-token'));
-    var decodedAuth = jwt_decode(Cookies.get('auth-token'));
-    setDecoded(decodedAuth);
+    // var decodedAuth = jwt_decode(Cookies.get('auth-token'));
+    if(setAuthToken(Cookies.get('auth-token'))){
+      setDecoded(jwt_decode(Cookies.get('auth-token')));
+    }
   }, []);
 
   return (
@@ -50,7 +52,7 @@ function Header() {
                 </Link>
               </li>
 
-              {decoded.isAdmin ? (
+              {authToken && decoded.isAdmin ? (
                 <li>
                   <Link href="/admin">Admin</Link>
                 </li>
