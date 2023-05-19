@@ -3,9 +3,14 @@
     margin-left: 10px;
     margin-top:20px;
     margin-bottom: 30px;
+    :hover{
+        color: $blue;
+    } 
     a{
         display: flex;
-        align-items: center;  
+        align-items: center; 
+        color: inherit;
+        
     }
 }
 .list {
