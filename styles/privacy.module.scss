@@ -3,7 +3,14 @@
 .container {
     @include theContainer;
     .backBtn{
-        @include back
+        @include back;
+        margin-left: 0px;
+        margin-top:20px;
+        margin-bottom: 60px;
+        a{
+            display: flex;
+            align-items: center;  
+        }
     }
     p:first-child {
         margin-top: 40px;

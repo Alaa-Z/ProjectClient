@@ -25,7 +25,7 @@ export default function privacy () {
                     <b>Information Collection: </b> We may collect personal information such as your name, email address, and location when you register an account. This information is necessary to create and manage your account effectively.
                     </li>
                     <li>
-                    <b> How We Use Your Information:: </b>AWe use your information to help you connect with other students and share or borrow course materials. To make it easier for you to find materials nearby, we may show your name and location to other users. Rest assured, we will never share your email address with anyone without your permission.
+                    <b> How We Use Your Information:</b>We use your information to help you connect with other students and share or borrow course materials. To make it easier for you to find materials nearby, we may show your name and location to other users. Rest assured, we will never share your email address with anyone without your permission.
                     </li>
                     <li>
                     <b>Protecting Your Data: </b>  We take the security of your personal information seriously. We have measures in place to keep your data safe from unauthorized access, changes, or sharing.

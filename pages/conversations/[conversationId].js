@@ -109,7 +109,7 @@ export default function conversationDetails() {
             <div>
               <div className={styles.backBtn}>
                 <Link  href='/conversations'>
-                <MdArrowBackIos/> Back 
+                <MdArrowBackIos/> <span>Back </span> 
                 </Link>
               </div>
               <ul className={styles.list}>
@@ -158,6 +158,3 @@ export default function conversationDetails() {
 }
 
 
-
-// 645f9f86040a4695dd28deca
-// 64667be36d8266954cf3c1a6

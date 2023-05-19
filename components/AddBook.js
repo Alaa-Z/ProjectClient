@@ -97,7 +97,7 @@ function AddBook({AddedBook}) {
         </label>
         <input id="isbn" className={styles.input} type="text" value={ISBN} onChange={(e) => setISBN(e.target.value)} />
         <br></br>
-        <button className={styles.btn} type="submit"> + </button>
+        <button className={styles.btn} type="submit"> Add </button>
         {/* if the messages exist show them */}
         {error && <p className={styles.error}>{error}</p>}
         {success && <p className={styles.success}>Book added successfully!</p>}

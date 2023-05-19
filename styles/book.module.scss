@@ -11,10 +11,10 @@
     }
 }
 
-@media (max-width:$breakpoint-tablet) {
+@media (max-width:$breakpoint-mobile) {
     .allBooks{
         h1{
-            font-size:$font-large;
+            font-size:$font-normal;
         }
     }
     

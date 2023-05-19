@@ -103,6 +103,7 @@ function RegisterForm() {
               Name:
             </label>
             <br></br>
+            {name && name.length <= 2 ?  <span> Name length must be at least 2 characters long</span>  : null}
             {name ? null : <MdDriveFileRenameOutline className={styles.icon}  />}
             <input type="text" placeholder="Enter your name"
             id="name"
@@ -117,6 +118,7 @@ function RegisterForm() {
             </label>
             <br></br>
             {email ? null : <MdEmail className={styles.icon}  />}
+            {email && email.length <= 6  ?  <span> Please enter a valid email address</span>  : null}
             <input type="email" placeholder="Enter your email"
             id="email"
             value={email}
@@ -130,7 +132,7 @@ function RegisterForm() {
             </label>
             <br></br>
             {password ? null : <RiLockPasswordFill className={styles.icon}  />}
-            {password ?  <span> Password length must be at least 6 characters long </span>  : null}
+            {password && password.length <= 6  ?  <span> Password length must be at least 6 characters long </span>  : null}
             <input type="password"
               id="pass"
               value={password} 

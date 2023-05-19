@@ -37,8 +37,10 @@ function Header() {
       <nav>
         <div className={styles.navContainer} >
             <div className={styles.logo}>
+              <Link href="/"> 
               <img src="/logo.png" alt="logo for bookShare website represents collections of books with 2 hands"></img>
               <p>Books Borrowing Platform </p> 
+              </Link>  
             </div>
             <div className={styles.menuIcon} onClick={handleShowNavbar}>
             <GiHamburgerMenu />
